@@ -20,7 +20,7 @@
     <p class="mt-3 my-2">Manage Inventory</p>
 
     <div class=" list-group">
-        <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
+        <a href="{{ route("books.create") }}" class=" list-group-item list-group-item-action">
             Create New
         </a>
         <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
