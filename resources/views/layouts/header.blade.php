@@ -1,4 +1,4 @@
 
 <header class=" border rounded p-3 my-2">
-    Laravel App
+    Book Inventory
 </header>

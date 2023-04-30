@@ -6,7 +6,7 @@
         </a>
     </div>
 
-    <p class="mt-3 my-2">Manage Category</p>
+    {{-- <p class="mt-3 my-2">Manage Category</p>
 
     <div class=" list-group">
         <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
@@ -15,16 +15,16 @@
         <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
             Category List
         </a>
-    </div>
+    </div> --}}
 
     <p class="mt-3 my-2">Manage Inventory</p>
 
     <div class=" list-group">
         <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
-            Create Item
+            Create New
         </a>
         <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
-            Item List
+            Stock Tour
         </a>
     </div>
 
