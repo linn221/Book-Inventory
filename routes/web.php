@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,9 @@ Route::get('/', function () {
 Route::get('books/create', function () {
     return view("books.create");
 })->name("books.create");
+
+// dev routes
+Route::put('books', function(Request $request) {
+    return $request;
+})
+->name("books.store");

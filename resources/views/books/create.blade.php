@@ -10,7 +10,9 @@
         Create New Book
     </h4>
 
-    <form action="{{ route("coffee") }}" method="post">
+    <form action="{{ route("books.store") }}" method="post">
+        @csrf
+
         <div class="mb-3">
             <label for="" class=" form-label">
                 Name
@@ -29,6 +31,7 @@
             type="number"
             name="price"
             value="0"
+            step="50"
             class=" form-control">
         </div>
         <div class="mb-3">
