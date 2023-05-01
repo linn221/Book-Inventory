@@ -13,8 +13,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
-        return "This is index page for inventory";
+        $books = Book::all();
+        return view("books.index", [
+            'books' => $books
+        ]);
     }
 
     /**
@@ -48,7 +50,10 @@ class BookController extends Controller
     public function show(Book $book)
     {
         //
-        return "This is show page for inventory";
+        return $book;
+        return view("books.show", [
+            'book' => $book
+        ]);
     }
 
     /**
