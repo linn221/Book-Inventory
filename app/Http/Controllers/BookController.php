@@ -23,7 +23,7 @@ class BookController extends Controller
     public function create()
     {
         //
-        return "This is create page for inventory";
+        return view("books.create");
     }
 
     /**
@@ -32,6 +32,14 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
         //
+        $book = Book::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'minStock' => $request->minStock,
+            'course' => $request->course
+        ]);
+        return "Book created with id of $book->id!";
     }
 
     /**

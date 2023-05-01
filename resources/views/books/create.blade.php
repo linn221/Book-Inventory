@@ -10,7 +10,7 @@
         Create New Book
     </h4>
 
-    <form action="{{ route("books.store") }}" method="post">
+    <form action="{{ route("inventory.store") }}" method="post">
         @csrf
 
         <div class="mb-3">

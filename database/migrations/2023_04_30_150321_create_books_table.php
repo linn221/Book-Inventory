@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("course", 10);
             $table->integer("price");
             $table->integer("stock");
-            $table->integer("min_stock");
+            $table->integer("minStock");
             $table->timestamps();
         });
     }
