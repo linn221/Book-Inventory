@@ -20,3 +20,4 @@ Route::get('/', function () {
 })->name('coffee');
 
 Route::resource("inventory", BookController::class);
+Route::get('/coffee', [BookController::class, "coffee"]);

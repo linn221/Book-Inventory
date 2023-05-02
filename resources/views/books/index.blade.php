@@ -1,11 +1,10 @@
-@extends("layouts.master")
+@extends('layouts.master')
 
 @section('title')
     Book List
 @endsection
 
 @section('content')
-
     <h4>Book List</h4>
 
     <table class=" table">
@@ -22,7 +21,8 @@
         <tbody>
             @foreach ($books as $book)
                 <tr>
-                    <td>{{ $book->id }}</td>
+                    <td> <a href="{{ route('inventory.show', $book->id) }}"> {{ $book->id }}
+                        </a></td>
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->course }}</td>
                     <td>{{ $book->price }}</td>
@@ -33,5 +33,4 @@
             @endforeach
         </tbody>
     </table>
-
 @endsection

@@ -41,16 +41,16 @@ class BookController extends Controller
             'minStock' => $request->minStock,
             'course' => $request->course
         ]);
-        return "Book created with id of $book->id!";
+        return redirect()->route("inventory.index");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(int $id)
     {
         //
-        return $book;
+        $book = Book::findOrFail($id);
         return view("books.show", [
             'book' => $book
         ]);
@@ -79,5 +79,10 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         //
+    }
+
+    public function coffee() {
+        $books = Book::where("price", ">", 100)->dd();
+        return $books;
     }
 }
