@@ -10,7 +10,7 @@
         Edit New Book
     </h4>
 
-    <form action="{{ route("inventory.update") }}" method="post">
+    <form action="{{ route("book.update") }}" method="post">
         @csrf
         @method("put")
 

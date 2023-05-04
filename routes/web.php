@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,10 @@ Route::get('/', function () {
     return view('main');
 })->name('coffee');
 
-Route::resource("inventory", BookController::class);
-Route::get('/coffee', [BookController::class, "coffee"]);
+Route::resource("book", BookController::class);
+// Route::get('/coffee', [BookController::class, "coffee"]);
+// Route::get("/get/{id}", [BookController::class, 'get']);
+// Route::get('/contact/{id}', function(Contact $contact) {
+//     // $contact = Contact::findOrFail($id);
+//     return $contact;
+// });
