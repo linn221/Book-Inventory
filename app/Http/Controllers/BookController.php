@@ -61,7 +61,9 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         //
-        return "This is edit page for inventory";
+        return view("books.edit", [
+            'book' => $book
+        ]);
     }
 
     /**
@@ -69,6 +71,13 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
+        $book->name = $request->name;
+        $book->price = $request->price;
+        $book->stock = $request->stock;
+        $book->minStock = $request->minStock;
+        $book->course = $request->course;
+        $book->update();
+        return redirect()->route("book.index");
         //
     }
 

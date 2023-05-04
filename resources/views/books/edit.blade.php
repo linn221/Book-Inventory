@@ -10,7 +10,7 @@
         Edit New Book
     </h4>
 
-    <form action="{{ route("book.update") }}" method="post">
+    <form action="{{ route("book.update", $book->id) }}" method="post">
         @csrf
         @method("put")
 
@@ -21,7 +21,7 @@
             <input
             type="text"
             name="name"
-            value=""
+            value="{{ $book->name }}"
             class=" form-control">
         </div>
         <div class="mb-3">
@@ -31,7 +31,7 @@
             <input
             type="number"
             name="price"
-            value="0"
+            value="{{ $book->price }}"
             step="50"
             class=" form-control">
         </div>
@@ -43,7 +43,7 @@
             <input
             type="text"
             name="course"
-            value=""
+            value="{{ $book->course }}"
             class=" form-control">
         </div>
         <div class="mb-3">
@@ -53,7 +53,7 @@
             <input
             type="number"
             name="stock"
-            value="0"
+            value="{{ $book->stock }}"
             class=" form-control">
         </div>
         <div class="mb-3">
@@ -63,7 +63,7 @@
             <input
             type="number"
             name="minStock"
-            value="0"
+            value="{{ $book->minStock }}"
             class=" form-control">
         </div>
         <button class=" btn btn-primary">
