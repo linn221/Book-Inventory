@@ -21,14 +21,18 @@
         <tbody>
             @foreach ($books as $book)
                 <tr>
-                    <td> <a href="{{ route('book.show', $book->id) }}"> {{ $book->id }}
-                        </a></td>
+                    <td>
+                        {{ $book->id }}
+                    </td>
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->course }}</td>
                     <td>{{ $book->price }}</td>
                     <td>{{ $book->stock }}</td>
                     <td>
-                        <a href="{{ route("book.edit", $book->id) }}" class=" btn btn-primary">
+                        <a href="{{ route("book.show", $book->id) }}" class=" btn btn-success">
+                            Details
+                        </a>
+                        <a href="{{ route('book.edit', $book->id) }}" class=" btn btn-primary">
                             Edit
                         </a>
                         <form method="post" action="{{ route('book.destroy', $book->id) }}" class=" d-inline-block">
