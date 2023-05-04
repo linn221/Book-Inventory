@@ -28,7 +28,16 @@
                     <td>{{ $book->price }}</td>
                     <td>{{ $book->stock }}</td>
                     <td>
-                        Control
+                        <a href="{{ route("book.edit", $book->id) }}" class=" btn btn-primary">
+                            Edit
+                        </a>
+                        <form method="post" action="{{ route('book.destroy', $book->id) }}" class=" d-inline-block">
+                            @csrf
+                            @method('delete')
+                            <button class=" btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
                     </td>
             @endforeach
         </tbody>
