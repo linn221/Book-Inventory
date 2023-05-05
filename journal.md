@@ -10,7 +10,7 @@
 - [x] CRUD basic
 
 ### 2023-05-05 Fri
-- [!] default value in form
+- [x] default value in form
 - [!] action status alert using session
 - [x] update/store button to the right
 - [!] convert form label to input group
