@@ -9,5 +9,13 @@
 - [x] show detail page for each book
 - [x] CRUD basic
 
+### 2023-05-05 Fri
+- [!] default value in form
+- [!] action status alert using session
+- [x] update/store button to the right
+- [!] convert form label to input group
+- [ ] sort by column function in book.index
+
+
 ### Random Thoughts
 - show ins and outs of stock (+5 or -1 at the stock column)
