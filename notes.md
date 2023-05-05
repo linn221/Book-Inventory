@@ -21,3 +21,18 @@ function show(Model $coffee) {
     </button>
 </div>
 ```
+<br>
+
+---
+
+### Session variables
+*setting Session variables*
+```php
+redirect()->route("coffee.index")->with("status", "this is coffee");
+```
+*retrieving Session variables*
+```php
+@if (session('status'))
+    {{ session('status') }}
+@endif
+```

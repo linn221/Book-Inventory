@@ -11,9 +11,9 @@
 
 ### 2023-05-05 Fri
 - [x] default value in form
-- [!] action status alert using session
+- [x] action status alert using session
 - [x] update/store button to the right
-- [!] convert form label to input group
+- [ ] convert form label to input group
 - [ ] sort by column function in book.index
 
 

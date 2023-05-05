@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+
+@if (session('status'))
+    <div class=" alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
     <h4>Book List</h4>
 
     <table class=" table">

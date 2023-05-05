@@ -41,7 +41,7 @@ class BookController extends Controller
             'minStock' => $request->minStock,
             'course' => $request->course
         ]);
-        return redirect()->route("book.index");
+        return redirect()->route("book.index")->with("status", "Book#$book->id successfully created!");
     }
 
     /**
@@ -77,7 +77,7 @@ class BookController extends Controller
         $book->minStock = $request->minStock;
         $book->course = $request->course;
         $book->update();
-        return redirect()->route("book.index");
+        return redirect()->route("book.index")->with("status", "Book#$book->id successfully updated");
         //
     }
 
@@ -87,7 +87,7 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route("book.index");
+        return redirect()->route("book.index")->with("status", "Book#$book->id deleted successfully");
         //
     }
 
