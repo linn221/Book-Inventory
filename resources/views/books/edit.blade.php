@@ -9,6 +9,12 @@
         Edit New Book
     </h4>
 
+    @if ($errors->any())
+        <div class=" alert alert-danger">
+            Fill the form correctly
+        </div>
+    @endif
+
     <form action="{{ route('book.update', $book->id) }}" method="post">
         @csrf
         @method('put')
@@ -21,7 +27,12 @@
             type="text"
             name="name"
             value="{{ $book->name }}"
-            class=" form-control">
+            class=" form-control @error("name") is-invalid @enderror">
+
+            @error('name')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
+
         </div>
         <div class="mb-3">
             <label for="" class=" form-label">
@@ -32,7 +43,12 @@
             name="price"
             value="{{ $book->price }}"
             step="50"
-            class=" form-control">
+            class=" form-control @error("price") is-invalid @enderror">
+
+            @error('price')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
+
         </div>
         <div class="mb-3">
             <label for="" class=" form-label">
@@ -42,7 +58,12 @@
             <input type="text"
             name="course"
             value="{{ $book->course }}"
-            class=" form-control">
+            class=" form-control @error("course") is-invalid @enderror">
+
+            @error('course')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
+
         </div>
         <div class="mb-3">
             <label for="" class=" form-label">
@@ -52,7 +73,12 @@
             type="number" 
             name="stock" 
             value="{{ $book->stock }}"
-            class=" form-control">
+            class=" form-control @error("stock") is-invalid @enderror">
+
+            @error('stock')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
+
         </div>
         <div class="mb-3">
             <label for="" class=" form-label">
@@ -62,7 +88,12 @@
             type="number"
             name="minStock"
             value="{{ $book->minStock }}"
-            class=" form-control">
+            class=" form-control @error("minStock") is-invalid @enderror">
+
+            @error('minStock')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
+
         </div>
         <div class=" d-flex justify-content-end">
             <button class=" btn btn-primary float-right">

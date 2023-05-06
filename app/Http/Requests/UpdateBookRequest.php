@@ -21,8 +21,14 @@ class UpdateBookRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request()->book->id; // why? i have no idea
         return [
             //
+            'name' => "required|min:4|max:40|unique:books,name,$id",
+            'course' => 'required|min:3|max:8',
+            'price' => 'required|numeric|gt:50',
+            'stock' => 'required|numeric|gt:1',
+            'minStock' => 'required|numeric|gt:0'
         ];
     }
 }
