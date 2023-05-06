@@ -8,10 +8,11 @@ class CourseController extends Controller
 {
     //
     public function index() {
-
+        return view("courses.index");
     }
 
     public function store(Request $request) {
+        return 'courses.store';
 
     }
 

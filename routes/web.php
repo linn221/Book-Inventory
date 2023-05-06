@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
-use App\Models\Contact;
+use App\Http\Controllers\CourseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +21,13 @@ Route::get('/', function () {
 })->name('coffee');
 
 Route::resource("book", BookController::class);
+
+Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
+
+// Route::post();
 // Route::get('/coffee', [BookController::class, "coffee"]);
 // Route::get("/get/{id}", [BookController::class, 'get']);
 // Route::get('/contact/{id}', function(Contact $contact) {
