@@ -23,6 +23,11 @@ class StoreBookRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|min:4|max:20|unique:books',
+            'course' => 'required|min:3|max:8',
+            'price' => 'required|numeric|gt:50',
+            'stock' => 'required|numeric|gt:1',
+            'minStock' => 'required|numeric|gt:0'
         ];
     }
 }
