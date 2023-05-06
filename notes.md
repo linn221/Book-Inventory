@@ -36,3 +36,30 @@ redirect()->route("coffee.index")->with("status", "this is coffee");
     {{ session('status') }}
 @endif
 ```
+
+### Showing Validation errors
+```php
+@if ($errors->any())
+    <h4>Fill the forms correctly</h4>
+@endif
+```
+
+```php
+@error('name')
+    {{ $message }} // $message is available only within this block
+@enderror
+```
+---
+
+### Repopulating forms
+```php
+old('name')
+// with default value
+{{ old('name', $user->name) }}
+ 
+// Is equivalent to...
+ 
+{{ old('name', $user) }}
+```
+---
+```

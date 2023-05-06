@@ -16,12 +16,17 @@
 - [x] validate the requests, make the name unique
 - [x] repopulate forms with old values
 - [x] show errors in forms bootstrap style
-- [!] sort by column function in book.index
+- [!] CRUD for courses, one page for all actions
 - [!] make each course a radio button, provide a link to create a new one
+- [!] nav-bar
+- [!] validate course basic
+- [ ] sort by column function in book.index
 - [ ] make course model
 - [ ] create the course if it doesn't exist, then add the id to book table
 - [ ] make the course clickable link, which filter the list of books by that id
 
 
+
 ### Random Thoughts
 - show ins and outs of stock (+5 or -1 at the stock column)
+- [ ] 
