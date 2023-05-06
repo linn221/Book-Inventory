@@ -25,7 +25,7 @@
             <input
             type="text"
             name="name"
-            value=""
+            value="{{ old('name') }}"
             class=" form-control @error("name") is-invalid @enderror">
 
             @error('name')
@@ -40,7 +40,7 @@
             <input
             type="number"
             name="price"
-            value="50"
+            value="{{ old("price", "50") }}"
             step="50"
             class=" form-control @error("price") is-invalid @enderror">
 
@@ -56,7 +56,7 @@
             {{-- yellow, turn me into datalist --}}
             <input type="text"
             name="course"
-            value=""
+            value="{{ old("course") }}"
             class=" form-control @error("course") is-invalid @enderror">
 
             @error('course')
@@ -71,7 +71,7 @@
             <input
             type="number" 
             name="stock" 
-            value="3"
+            value="{{ old("stock", 3) }}"
             class=" form-control @error("stock") is-invalid @enderror">
 
             @error('stock')
@@ -86,7 +86,7 @@
             <input
             type="number"
             name="minStock"
-            value="1"
+            value="{{ old('minStock', 1) }}"
             class=" form-control @error("minStock") is-invalid @enderror">
 
             @error('minStock')

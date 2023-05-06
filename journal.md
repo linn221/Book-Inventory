@@ -13,9 +13,9 @@
 - [x] update/store button to the right
 
 ### 2023-05-06 Sat
-- [!] validate the requests, make the name unique
-- [!] repopulate forms with old values
-- [!] show errors in forms bootstrap style
+- [x] validate the requests, make the name unique
+- [x] repopulate forms with old values
+- [x] show errors in forms bootstrap style
 - [!] sort by column function in book.index
 - [ ] make course model
 - [ ] create the course if it doesn't exist, then add the id to book table
