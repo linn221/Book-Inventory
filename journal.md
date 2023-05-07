@@ -18,7 +18,9 @@
 - [x] show errors in forms bootstrap style
 - [!] CRUD for courses, one page for all actions
 - [!] make each course a radio button, provide a link to create a new one
-- [!] nav-bar
+- [x] nav-bar
+- [!] style courses page, currently the table is fucked
+- [!] change courses to singular route name
 - [!] validate course basic
 - [ ] sort by column function in book.index
 - [ ] make course model

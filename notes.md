@@ -62,4 +62,9 @@ old('name')
 {{ old('name', $user) }}
 ```
 ---
+### Delete form
+```php
+<form action="{{ route('model.destroy', $courses->id) }}" method="post">
+    @csrf
+    @method('delete')
 ```
