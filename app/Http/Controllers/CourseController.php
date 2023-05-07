@@ -30,9 +30,11 @@ class CourseController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
-        return $request;
-
+    public function update(Course $course, Request $request) {
+        $course->name = $request->name;
+        $course->note = $request->note;
+        $course->update();
+        return redirect()->route('courses.index')->with("Id#$course->id ($course->name) has been updated successfully");
     }
 
     public function destroy(Course $course) {
