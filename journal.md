@@ -33,6 +33,9 @@
 ### Refactoring
 - [ ] course table's name column have to be unique
 
+### Bugs
+- [ ] in course form, one additional tab has 
+
 
 
 ### Random Thoughts

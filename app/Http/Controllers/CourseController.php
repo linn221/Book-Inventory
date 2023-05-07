@@ -24,7 +24,14 @@ class CourseController extends Controller
         return redirect()->back()->with(['status' => "$course->name saved at id #$course->id"]);
     }
 
+    public function edit(Course $course) {
+        return view('courses.edit', [
+            'course' => $course
+        ]);
+    }
+
     public function update(Request $request) {
+        return $request;
 
     }
 

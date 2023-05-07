@@ -26,13 +26,8 @@
         name="name"
         placeholder="Course Name"
         class=" form-control w-75 mb-3">
-        <label for=""
-        class=" form-label">
-            Notes
-        </label>
-        <textarea name="note"
-        class=" form-control w-75 mb-3" placeholder="Enter Note (nullable)">
-        </textarea>
+        <label for="" class=" form-label"> Notes </label>
+        <textarea name="note" class=" form-control w-75 mb-3"></textarea>
         <button class=" btn btn-primary">
             ADD
         </button>
@@ -54,7 +49,10 @@
         <td>{{ $course->name }}</td>
         <td>{{ $course->note }}</td>
         <td>
-            <form action="{{ route('courses.destroy', $course->id) }}" method="post">
+            <a href="{{ route('courses.edit', $course->id) }}" class=" btn btn-outline-warning">
+                Edit
+            </a>
+            <form action="{{ route('courses.destroy', $course->id) }}" method="post" class=" d-inline-block">
                 @csrf
                 @method('delete')
                 <button class=" btn btn-danger">

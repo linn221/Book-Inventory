@@ -24,6 +24,7 @@ Route::resource("book", BookController::class);
 
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::get("/courses/{course}", [CourseController::class, 'edit'])->name('courses.edit');
 Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
