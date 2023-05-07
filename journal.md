@@ -30,6 +30,9 @@
 - [ ] create the course if it doesn't exist, then add the id to book table
 - [ ] make the course clickable link, which filter the list of books by that id
 
+### Refactoring
+- [ ] course table's name column have to be unique
+
 
 
 ### Random Thoughts

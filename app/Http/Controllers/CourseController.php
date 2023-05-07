@@ -19,6 +19,7 @@ class CourseController extends Controller
         // yellow, any chance to pass the attribute in constructor directly?
         $course = new Course();
         $course->name = $request->input('name');
+        $course->note = $request->input('note');
         $course->save();
         return redirect()->back()->with(['status' => "$course->name saved at id #$course->id"]);
     }

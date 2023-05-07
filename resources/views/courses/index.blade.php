@@ -21,10 +21,18 @@
 {{-- create form --}}
 <form action="{{ route('courses.store') }}" method="post">
     @csrf
-    <div class="input-group mt-4 p-2 w-50">
+    <div class="mt-4 p-2 w-50">
         <input type="text"
         name="name"
-        class=" form-control">
+        placeholder="Course Name"
+        class=" form-control w-75 mb-3">
+        <label for=""
+        class=" form-label">
+            Notes
+        </label>
+        <textarea name="note"
+        class=" form-control w-75 mb-3" placeholder="Enter Note (nullable)">
+        </textarea>
         <button class=" btn btn-primary">
             ADD
         </button>
@@ -37,12 +45,14 @@
     <th>
         <td>#</td>
         <td>Course</td>
+        <td>Notes</td>
         <td>Control</td>
     </th>
 @forelse ($courses as $course)
     <tr>
         <td>{{ $course->id }}</td>
         <td>{{ $course->name }}</td>
+        <td>{{ $course->note }}</td>
         <td>
             <form action="{{ route('courses.destroy', $course->id) }}" method="post">
                 @csrf
