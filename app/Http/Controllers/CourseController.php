@@ -27,7 +27,10 @@ class CourseController extends Controller
 
     }
 
-    public function destroy(Request $request) {
-
+    public function destroy(Course $course) {
+        // validate the request pls
+        $status = "#$course->id ($course->name) successfully deleted!";
+        $course->delete();
+        return redirect()->back()->with([ 'status' => $status ]);
     }
 }
