@@ -37,34 +37,38 @@
 {{-- listing existing data --}}
 
 <table class=" table">
-    <th>
-        <td>#</td>
-        <td>Course</td>
-        <td>Notes</td>
-        <td>Control</td>
-    </th>
-@forelse ($courses as $course)
-    <tr>
-        <td>{{ $course->id }}</td>
-        <td>{{ $course->name }}</td>
-        <td>{{ $course->note }}</td>
-        <td>
-            <a href="{{ route('courses.edit', $course->id) }}" class=" btn btn-outline-warning">
-                Edit
-            </a>
-            <form action="{{ route('courses.destroy', $course->id) }}" method="post" class=" d-inline-block">
-                @csrf
-                @method('delete')
-                <button class=" btn btn-danger">
-                    Del
-                </button>
-            </form>
-        </td>
-    </tr>
-
-@empty
-    
-@endforelse
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Course</td>
+            <td>Notes</td>
+            <td>Control</td>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($courses as $course)
+            <tr>
+                <td>{{ $course->id }}</td>
+                <td>{{ $course->name }}</td>
+                <td>{{ $course->note }}</td>
+                <td>
+                    <a href="{{ route('courses.edit', $course->id) }}" class=" btn btn-outline-warning">
+                        Edit
+                    </a>
+                    <form action="{{ route('courses.destroy', $course->id) }}" method="post" class=" d-inline-block">
+                        @csrf
+                        @method('delete')
+                        <button class=" btn btn-danger">
+                            Del
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        
+        @empty
+            
+        @endforelse
+    </tbody>
     
 @endsection
 </table>

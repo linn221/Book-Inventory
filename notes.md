@@ -114,6 +114,9 @@ public function destroy(Book $book) { $book->delete(); }
 ```
 *valid as long as the **variable names are matched** according to model binding rule, that is, **coffee***
 
+-----------------------------------------------------------------------------------------------------
+
+:warning: use `<thead>` + `<tbody>`, not `<th><tr>` (for some reasons, i was convinced th for thead)
 
 <!--
 copy me for templates!
