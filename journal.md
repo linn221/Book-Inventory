@@ -27,10 +27,12 @@
 :warning: convert course column of books to a foreign key of course table (later of course)
 
 - [x] make each course a radio button, provide a link to create a new one
-- [!] style courses page, currently the table is fucked, (add note column as well)
+- [x] style courses page, currently the table is fucked, (add note column as well)
     <br>
     handle empty data as well, makes input autofocus
-    show alert status on updating
+
+- [ ] show alert status on updating
+
 - [ ] book.edit form, choose the previously selected course by default
 - [ ] add link for creating a course at the end of radio button
 - [ ] update Validator for course attribute

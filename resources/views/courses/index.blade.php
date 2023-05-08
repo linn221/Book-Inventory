@@ -25,7 +25,8 @@
         <input type="text"
         name="name"
         placeholder="Course Name"
-        class=" form-control w-75 mb-3">
+        class=" form-control w-75 mb-3"
+        autofocus>
         <label for="" class=" form-label"> Notes </label>
         <textarea name="note" class=" form-control w-75 mb-3"></textarea>
         <button class=" btn btn-primary">
@@ -64,11 +65,12 @@
                     </form>
                 </td>
             </tr>
+    </tbody>
+</table>
         
         @empty
-            
-        @endforelse
     </tbody>
-    
-@endsection
 </table>
+            Create a course that relate to book, can be anything really, author or any meta data is valid, though not ideal
+        @endforelse
+@endsection
