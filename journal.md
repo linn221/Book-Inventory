@@ -31,7 +31,7 @@
     <br>
     handle empty data as well, makes input autofocus
 
-- [ ] show alert status on updating
+- [x] show alert status on updating (turns out *i forgot the key for session, first argumet to session() helper*)
 
 - [ ] book.edit form, choose the previously selected course by default
 - [ ] add link for creating a course at the end of radio button
