@@ -16,17 +16,18 @@
 - [x] validate the requests, make the name unique
 - [x] repopulate forms with old values
 - [x] show errors in forms bootstrap style
-- [!] CRUD for courses, one page for all actions
 - [x] nav-bar
-- [!] Edit details page, with notes filed
+- [x] make course model
+- [x] CRUD for courses, two page for all actions
+- [x] Edit details page, with notes filed
+- [!] make each course a radio button, provide a link to create a new one
 - [!] style courses page, currently the table is fucked, (add note column as well)
     <br>
     handle empty data as well, makes input autofocus
-- [!] change courses to singular route name
-- [!] validate course basic, unique name, with limited character length
-- [!] make each course a radio button, provide a link to create a new one
+    show alert status on updating
+- [ ] change courses to singular route name
+- [ ] validate course basic, unique name, with limited character length
 - [ ] sort by column function in book.index
-- [ ] make course model
 - [ ] create the course if it doesn't exist, then add the id to book table
 - [ ] make the course clickable link, which filter the list of books by that id
 

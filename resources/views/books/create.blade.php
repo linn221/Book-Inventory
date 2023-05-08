@@ -50,20 +50,21 @@
 
         </div>
         <div class="mb-3">
-            <label for="" class=" form-label">
-                Course
-            </label>
-            {{-- yellow, turn me into datalist --}}
-            <input type="text"
-            name="course"
-            value="{{ old("course") }}"
-            class=" form-control @error("course") is-invalid @enderror">
+            @forelse ($courses as $course)
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}">
+                    <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
+                </div>
+            @empty
+                Create a fucking course
+            @endforelse
 
-            @error('course')
+            {{-- i don't think i am needing this but leaving it here anyways --}}
+            {{-- @error('course')
                 <div class=" invalid-feedback">{{ $message }}</div>
-            @enderror
-
+            @enderror --}}
         </div>
+
         <div class="mb-3">
             <label for="" class=" form-label">
                 Stock

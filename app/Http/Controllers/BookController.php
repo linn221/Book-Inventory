@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
+use App\Models\Course;
 
 class BookController extends Controller
 {
@@ -25,7 +26,10 @@ class BookController extends Controller
     public function create()
     {
         //
-        return view("books.create");
+        $courses = Course::all();
+        return view("books.create", [
+            'courses' => $courses
+        ]);
     }
 
     /**
