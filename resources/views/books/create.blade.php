@@ -52,7 +52,10 @@
         <div class="mb-3">
             @forelse ($courses as $course)
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}">
+                    {{-- yellow, i am supposed to store just the id, but see, i don't want to focus too much on things like foreign keys and stuffs, so leaving it here
+                    {{-- this is just a learning project and I am already over thinking stuffs --}}
+                    {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
+                    <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
                     <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
                 </div>
             @empty

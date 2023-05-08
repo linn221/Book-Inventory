@@ -50,20 +50,25 @@
             @enderror
 
         </div>
+
+        {{-- proudly copy & paste --}}
         <div class="mb-3">
-            <label for="" class=" form-label">
-                Course
-            </label>
-            {{-- yellow, turn me into datalist --}}
-            <input type="text"
-            name="course"
-            value="{{ old('course', $book->course); }}"
-            class=" form-control @error("course") is-invalid @enderror">
+            @forelse ($courses as $course)
+                <div class="form-check form-check-inline">
+                    {{-- yellow, i am supposed to store just the id, but see, i don't want to focus too much on things like foreign keys and stuffs, so leaving it here
+                    {{-- this is just a learning project and I am already over thinking stuffs --}}
+                    {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
+                    <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
+                    <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
+                </div>
+            @empty
+                Create a fucking course
+            @endforelse
 
-            @error('course')
+            {{-- i don't think i am needing this but leaving it here anyways --}}
+            {{-- @error('course')
                 <div class=" invalid-feedback">{{ $message }}</div>
-            @enderror
-
+            @enderror --}}
         </div>
         <div class="mb-3">
             <label for="" class=" form-label">
