@@ -15,16 +15,15 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->input('search');
-        if ($search) {
+        if ($request->has('search')) {
+            $search = $request->input('search');
             $books = Book::where('name', 'LIKE', "%$search%")->get();
         } else {
+            $search = '';
             $books = Book::all();
         }
 
-        return view("books.index", [
-            'books' => $books
-        ]);
+        return view("books.index", compact('search', 'books'));
     }
 
     /**
