@@ -6,15 +6,22 @@ use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
 use App\Models\Course;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::all();
+        $search = $request->input('search');
+        if ($search) {
+            $books = Book::where('name', 'LIKE', "%$search%")->get();
+        } else {
+            $books = Book::all();
+        }
+
         return view("books.index", [
             'books' => $books
         ]);

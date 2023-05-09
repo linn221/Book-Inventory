@@ -36,11 +36,12 @@
 ### 2023-05-09 Tue
 - [!] book.edit form, choose the previously selected course by default
 - [x] add link for creating a course at the end of radio button
-- [!] update Validator for course attribute, the value has to be in courses table
+- [x] update Validator for course attribute, the value has to be in courses table
+- [!] sort by column function in book.index
+- [!] search book name
 
-- [ ] validate course basic, unique name, with limited character length
-- [ ] sort by column function in book.index
-- [ ] create the course if it doesn't exist, then add the id to book table
+- [!] validate course basic, unique name, with limited character length
+- [X] create the course if it doesn't exist, then add the id to book table
 - [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
