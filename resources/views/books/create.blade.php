@@ -66,10 +66,13 @@
                 Create Course
             </a>
 
-            {{-- i don't think i am needing this but leaving it here anyways --}}
-            {{-- @error('course')
-                <div class=" invalid-feedback">{{ $message }}</div>
-            @enderror --}}
+            @error('course')
+            <h5>
+                <div class=" text-danger">
+                    {{ "!!! $message !!!" }}
+                </div>
+            </h5>
+            @enderror
         </div>
 
         <div class="mb-3">
