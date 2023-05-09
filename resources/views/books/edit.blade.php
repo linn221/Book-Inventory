@@ -64,12 +64,20 @@
             @empty
                 Create a fucking course
             @endforelse
+            <a href="{{ route('courses.index') }}" class=" btn btn-sm btn-primary ms-3">
+                Create Course
+            </a>
 
-            {{-- i don't think i am needing this but leaving it here anyways --}}
-            {{-- @error('course')
-                <div class=" invalid-feedback">{{ $message }}</div>
-            @enderror --}}
+            @error('course')
+            <h5>
+                <div class=" text-danger">
+                    {{ "!!! $message !!!" }}
+                </div>
+            </h5>
+            @enderror
         </div>
+        {{-- copy & paste proudly --}}
+
         <div class="mb-3">
             <label for="" class=" form-label">
                 Stock
