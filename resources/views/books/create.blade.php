@@ -26,7 +26,8 @@
             type="text"
             name="name"
             value="{{ old('name') }}"
-            class=" form-control @error("name") is-invalid @enderror">
+            class=" form-control @error("name") is-invalid @enderror"
+            autofocus>
 
             @error('name')
                 <div class=" invalid-feedback">{{ $message }}</div>
@@ -57,6 +58,9 @@
                     {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
                     <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
                     <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
+                    <a href="{{ route('courses.index') }}" class=" btn btn-sm btn-primary ms-3">
+                        Create Course
+                    </a>
                 </div>
             @empty
                 Create a fucking course

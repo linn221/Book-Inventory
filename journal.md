@@ -33,11 +33,11 @@
 
 - [x] show alert status on updating (turns out *i forgot the key for session, first argumet to session() helper*)
 
-- [ ] book.edit form, choose the previously selected course by default
-- [ ] add link for creating a course at the end of radio button
-- [ ] update Validator for course attribute
+### 2023-05-09 Tue
+- [!] book.edit form, choose the previously selected course by default
+- [x] add link for creating a course at the end of radio button
+- [!] update Validator for course attribute, the value has to be in courses table
 
-- [ ] change courses to singular route name
 - [ ] validate course basic, unique name, with limited character length
 - [ ] sort by column function in book.index
 - [ ] create the course if it doesn't exist, then add the id to book table
@@ -45,12 +45,15 @@
 
 ### Refactoring
 - [ ] course table's name column have to be unique
+- [ ] change courses to singular route name
 
 ### Bugs
-- [ ] in course form, one additional tab has 
+- [x] in course form, one additional tab has 
+- [!] course listing table become inline after first item
 
 
 
 ### Random Thoughts
 - show ins and outs of stock (+5 or -1 at the stock column)
+- [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
 - [ ] 
