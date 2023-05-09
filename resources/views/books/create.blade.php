@@ -58,13 +58,13 @@
                     {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
                     <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
                     <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
-                    <a href="{{ route('courses.index') }}" class=" btn btn-sm btn-primary ms-3">
-                        Create Course
-                    </a>
                 </div>
             @empty
                 Create a fucking course
             @endforelse
+            <a href="{{ route('courses.index') }}" class=" btn btn-sm btn-primary ms-3">
+                Create Course
+            </a>
 
             {{-- i don't think i am needing this but leaving it here anyways --}}
             {{-- @error('course')
