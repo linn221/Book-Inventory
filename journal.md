@@ -49,7 +49,7 @@
 
 ### Bugs
 - [x] in course form, one additional tab has 
-- [!] course listing table become inline after first item
+- [x] course listing table become inline after first item
 
 
 

@@ -65,12 +65,13 @@
                     </form>
                 </td>
             </tr>
-    </tbody>
-</table>
-        
         @empty
+        <tr>
+            <td colspan="4">
+                Create a course that relate to book, can be anything really, author or any meta data is valid, though not ideal
+            </td>
+        </tr>
+        @endforelse
     </tbody>
 </table>
-            Create a course that relate to book, can be anything really, author or any meta data is valid, though not ideal
-        @endforelse
 @endsection
