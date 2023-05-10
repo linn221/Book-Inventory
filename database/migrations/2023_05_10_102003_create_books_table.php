@@ -14,13 +14,17 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string("name", 50);
-            $table->string("course", 10);
             $table->integer("price");
             $table->integer("stock");
             $table->integer("minStock");
+            $table->foreignId('course_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

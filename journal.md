@@ -34,19 +34,24 @@
 - [x] show alert status on updating (turns out *i forgot the key for session, first argumet to session() helper*)
 
 ### 2023-05-09 Tue
-- [!] book.edit form, choose the previously selected course by default
 - [x] add link for creating a course at the end of radio button
 - [x] update Validator for course attribute, the value has to be in courses table
-- [!] sort by column function in book.index
-- [!] search book name
+- [x] search book name
 
+### 2023-05-10 Wed
+- [!] modify books table to store course_id as a foreign key instead of course string
+- [!] join table for listing books data of course
 - [!] validate course basic, unique name, with limited character length
-- [X] create the course if it doesn't exist, then add the id to book table
+- [!] book.edit form, choose the previously selected course by default
+- [!] book.create as well, use old() helper
+- [!] sort by column function in book.index
+- [ ] toggle ascending and descending
+
 - [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
-- [ ] course table's name column have to be unique
-- [ ] change courses to singular route name
+- [!] course table's name column have to be unique
+- [!] change courses to singular route name
 
 ### Bugs
 - [x] in course form, one additional tab has 
