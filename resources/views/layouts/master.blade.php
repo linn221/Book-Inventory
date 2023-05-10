@@ -28,4 +28,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 </body>
+<script>
+    @yield("js")
+</script>
 </html>
