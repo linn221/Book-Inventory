@@ -16,4 +16,10 @@ class Book extends Model
         'stock',
         'minStock'
     ];
+
+    public function course() {
+        // return $this->hasOne(Course::class, 'id', 'course_id');
+        // i don't have a full idea what is happening 
+        return $this->belongsTo(Course::class);
+    }
 }

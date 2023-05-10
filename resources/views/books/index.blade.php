@@ -38,7 +38,7 @@
                         {{ $book->id }}
                     </td>
                     <td>{{ $book->name }}</td>
-                    <td>{{ $book->course }}</td>
+                    <td>{{ $book->course->name }}</td>
                     <td>{{ $book->price }}</td>
                     <td>{{ $book->stock }}</td>
                     <td>
