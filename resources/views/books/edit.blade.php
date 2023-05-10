@@ -123,5 +123,5 @@
 @endsection
 
 @section('js')
-document.getElementById("{{ "$book->course_id" }}").checked = true;
+document.getElementById("{{ old("course_id", $book->course_id) }}").checked = true;
 @endsection

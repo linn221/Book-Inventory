@@ -43,8 +43,8 @@
 - [x] join table for listing books data of course
 - [!] validate course basic, unique name, with limited character length
 - [x] book.edit form, choose the previously selected course by default
-- [!] book.create as well, use old() helper
 - [!] sort by column function in book.index
+- [!] book.create as well, use old() helper
 - [ ] toggle ascending and descending
 
 - [ ] make the course clickable link, which filter the list of books by that id
