@@ -39,10 +39,10 @@
 - [x] search book name
 
 ### 2023-05-10 Wed
-- [!] modify books table to store course_id as a foreign key instead of course string
-- [!] join table for listing books data of course
+- [x] modify books table to store course_id as a foreign key instead of course string
+- [x] join table for listing books data of course
 - [!] validate course basic, unique name, with limited character length
-- [!] book.edit form, choose the previously selected course by default
+- [x] book.edit form, choose the previously selected course by default
 - [!] book.create as well, use old() helper
 - [!] sort by column function in book.index
 - [ ] toggle ascending and descending

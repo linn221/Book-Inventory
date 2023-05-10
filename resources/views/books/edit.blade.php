@@ -58,7 +58,8 @@
                     {{-- yellow, i am supposed to store just the id, but see, i don't want to focus too much on things like foreign keys and stuffs, so leaving it here
                     {{-- this is just a learning project and I am already over thinking stuffs --}}
                     {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
-                    <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
+                    <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}"
+                    @if ($book->course_id == $course->id) {{ "checked" }}  @else @endif>
                     <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
                 </div>
             @empty
