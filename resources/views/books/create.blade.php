@@ -56,8 +56,13 @@
                     {{-- yellow, i am supposed to store just the id, but see, i don't want to focus too much on things like foreign keys and stuffs, so leaving it here
                     {{-- this is just a learning project and I am already over thinking stuffs --}}
                     {{-- <input class="form-check-input" type="radio" name="course" value="{{ $course->id }}"> --}}
-                    <input class="form-check-input" type="radio" name="course" value="{{ $course->name }}">
-                    <label class="form-check-label" for="inlineRadio1">{{ $course->name }}</label>
+                    <input
+                    type="radio"
+                    name="course_id"
+                    class="form-check-input"
+                    id="{{ 'r'.$course->id }}"
+                    value="{{ $course->id }}">
+                    <label class="form-check-label" for="{{ 'r'.$course->id }}">{{ $course->name }}</label>
                 </div>
             @empty
                 Create a fucking course

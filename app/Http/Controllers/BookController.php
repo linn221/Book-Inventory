@@ -49,7 +49,7 @@ class BookController extends Controller
             'price' => $request->price,
             'stock' => $request->stock,
             'minStock' => $request->minStock,
-            'course' => $request->course
+            'course_id' => $request->course_id
         ]);
         return redirect()->route("book.index")->with("status", "Book#$book->id successfully created!");
     }

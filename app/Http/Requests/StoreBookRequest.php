@@ -25,7 +25,7 @@ class StoreBookRequest extends FormRequest
             //
             'name' => 'required|min:4|max:40|unique:books',
             // 'course' => 'required|min:3|max:8',
-            'course' => 'required|exists:courses,name',
+            'course_id' => 'required|exists:courses,id',
             'price' => 'required|numeric|gt:50',
             'stock' => 'required|numeric|gt:1',
             'minStock' => 'required|numeric|gt:0'

@@ -11,7 +11,7 @@ class Book extends Model
     protected $table = 'books';
     protected $fillable = [
         'name',
-        'course',
+        'course_id',
         'price',
         'stock',
         'minStock'
