@@ -25,7 +25,7 @@ class UpdateBookRequest extends FormRequest
         return [
             //
             'name' => "required|min:4|max:40|unique:books,name,$id",
-            'course' => 'required|min:3|max:8',
+            'course_id' => 'required|exists:courses,id',
             'price' => 'required|numeric|gt:50',
             'stock' => 'required|numeric|gt:1',
             'minStock' => 'required|numeric|gt:0'

@@ -86,7 +86,7 @@ class BookController extends Controller
         $book->price = $request->price;
         $book->stock = $request->stock;
         $book->minStock = $request->minStock;
-        $book->course = $request->course;
+        $book->course_id = $request->course_id;
         $book->update();
         return redirect()->route("book.index")->with("status", "Book#$book->id successfully updated");
         //
