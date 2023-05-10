@@ -15,13 +15,23 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('search')) {
-            $search = $request->input('search');
-            $books = Book::where('name', 'LIKE', "%$search%")->get();
-        } else {
-            $search = '';
-            $books = Book::all();
-        }
+        $search = '';
+        $books = Book::when($request->has('search'), function($q) {
+            $search = request()->input('search');
+            $q->where('name', 'LIKE', "%$search%");
+        })
+        ->when($request->has('order'), function($q) {
+            $order_column = request()->input('order');
+            $q->orderBy($order_column);
+        })
+        ->get();
+        // if ($request->has('search')) {
+        //     $search = $request->input('search');
+        //     $books = Book::where('name', 'LIKE', "%$search%")->get();
+        // } else {
+        //     $search = '';
+        //     $books = Book::all();
+        // }
 
         return view("books.index", compact('search', 'books'));
     }
