@@ -62,9 +62,9 @@
                     type="radio"
                     name="course_id"
                     class="form-check-input"
-                    id="{{ 'r'.$course->id }}"
+                    id="{{ $course->id }}"
                     value="{{ $course->id }}">
-                    <label class="form-check-label" for="{{ 'r'.$course->id }}">{{ $course->name }}</label>
+                    <label class="form-check-label" for="{{ $course->id }}">{{ $course->name }}</label>
                 </div>
             @empty
                 Create a fucking course
@@ -73,7 +73,7 @@
                 Create Course
             </a>
 
-            @error('course')
+            @error('course_id')
             <h5>
                 <div class=" text-danger">
                     {{ "!!! $message !!!" }}
@@ -81,6 +81,7 @@
             </h5>
             @enderror
         </div>
+
         {{-- copy & paste proudly --}}
 
         <div class="mb-3">
@@ -122,5 +123,5 @@
 @endsection
 
 @section('js')
-document.getElementById("{{ "r$book->course_id" }}").checked = true;
+document.getElementById("{{ "$book->course_id" }}").checked = true;
 @endsection

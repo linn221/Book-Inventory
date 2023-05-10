@@ -50,6 +50,7 @@
             @enderror
 
         </div>
+
         <div class="mb-3">
             @forelse ($courses as $course)
                 <div class="form-check form-check-inline">
