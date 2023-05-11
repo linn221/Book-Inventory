@@ -41,11 +41,13 @@
 ### 2023-05-10 Wed
 - [x] modify books table to store course_id as a foreign key instead of course string
 - [x] join table for listing books data of course
-- [!] validate course basic, unique name, with limited character length
 - [x] book.edit form, choose the previously selected course by default
 - [x] sort by column function in book.index
 - [x] book.create as well, use old() helper
-- [x] toggle ascending and descending
+
+### 2023-05-10 Thu
+- [x] toggle ascending and descending (used session)
+- [!] validate course basic, unique name, with limited character length
 
 - [ ] make the course clickable link, which filter the list of books by that id
 
