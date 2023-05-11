@@ -15,14 +15,23 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
+        // validation for search & order parameter is required! yellow
         $search = '';
-        $books = Book::when($request->has('search'), function($q) {
+        $books = Book::
+        when($request->has('search'), function($q) {
             $search = request()->input('search');
+
             $q->where('name', 'LIKE', "%$search%");
         })
-        ->when($request->has('order'), function($q) {
+        ->when($request->has('order'), function($q) use ($request) {
+
+            // using session for toggling ascend and descend
+            $sort = $request->session()->get('sort', 'asc');
+            $sort_toggled = $sort === 'asc' ? 'desc' : 'asc';
+            $request->session()->put('sort', $sort_toggled);
             $order_column = request()->input('order');
-            $q->orderBy($order_column);
+
+            $q->orderBy($order_column, $sort);
         })
         ->get();
         // if ($request->has('search')) {
