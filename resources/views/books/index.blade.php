@@ -23,11 +23,21 @@
     <table class=" table">
         <thead>
             <tr>
-                <td>#</td>
-                <td>Name</td>
-                <td>Course</td>
-                <td>Price</td>
-                <td>Stock</td>
+                <td>
+                    <a href="{{ route("book.index", ['order' => 'id']) }}"> # </a>
+                </td>
+                <td>
+                    <a href="{{ route("book.index", ['order' => 'name']) }}"> Name </a>
+                </td>
+                <td>
+                    <a href="{{ route("book.index", ['order' => 'course_id']) }}"> Course </a>
+                </td>
+                <td>
+                    <a href="{{ route("book.index", ['order' => 'price']) }}"> Price </a>
+                </td>
+                <td>
+                    <a href="{{ route("book.index", ['order' => 'stock']) }}"> Stock </a>
+                </td>
                 <td>Control</td>
             </tr>
         </thead>
@@ -35,12 +45,20 @@
             @foreach ($books as $book)
                 <tr>
                     <td>
-                        {{ $book->id }}
+                            {{ $book->id }}
                     </td>
-                    <td>{{ $book->name }}</td>
-                    <td>{{ $book->course->name }}</td>
-                    <td>{{ $book->price }}</td>
-                    <td>{{ $book->stock }}</td>
+                    <td>
+                            {{ $book->name }}
+                    </td>
+                    <td>
+                            {{ $book->course->name }}
+                    </td>
+                    <td>
+                            {{ $book->price }}
+                    </td>
+                    <td>
+                            {{ $book->stock }}
+                    </td>
                     <td>
                         <a href="{{ route("book.show", $book->id) }}" class=" btn btn-success">
                             Details
