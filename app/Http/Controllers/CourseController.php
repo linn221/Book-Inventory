@@ -34,7 +34,7 @@ class CourseController extends Controller
         $course->name = $request->name;
         $course->note = $request->note;
         $course->update();
-        return redirect()->route('courses.index')->with("status", "Id#$course->id ($course->name) has been updated successfully");
+        return redirect()->route('course.index')->with("status", "Id#$course->id ($course->name) has been updated successfully");
     }
 
     public function destroy(Course $course) {

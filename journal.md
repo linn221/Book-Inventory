@@ -45,13 +45,13 @@
 - [x] book.edit form, choose the previously selected course by default
 - [x] sort by column function in book.index
 - [x] book.create as well, use old() helper
-- [ ] toggle ascending and descending
+- [x] toggle ascending and descending
 
 - [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
 - [!] course table's name column have to be unique
-- [!] change courses to singular route name
+- [x] change courses to singular route name
 
 ### Bugs
 - [x] in course form, one additional tab has 
@@ -62,4 +62,5 @@
 ### Random Thoughts
 - show ins and outs of stock (+5 or -1 at the stock column)
 - [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
+- [ ] warn me when deleting something that will delete related data from a different table
 - [ ] 

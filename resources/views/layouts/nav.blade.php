@@ -26,7 +26,7 @@
         <a href="{{ route("book.index") }}" class=" list-group-item list-group-item-action">
             Stock Tour
         </a>
-        <a href="{{ route("courses.index") }}" class=" list-group-item list-group-item-action">
+        <a href="{{ route("course.index") }}" class=" list-group-item list-group-item-action">
             Courses
         </a>
     </div>

@@ -19,7 +19,7 @@
 @endif
 
 {{-- create form --}}
-<form action="{{ route('courses.store') }}" method="post">
+<form action="{{ route('course.store') }}" method="post">
     @csrf
     <div class="mt-4 p-2 w-50">
         <input type="text"
@@ -53,10 +53,10 @@
                 <td>{{ $course->name }}</td>
                 <td>{{ $course->note }}</td>
                 <td>
-                    <a href="{{ route('courses.edit', $course->id) }}" class=" btn btn-outline-warning">
+                    <a href="{{ route('course.edit', $course->id) }}" class=" btn btn-outline-warning">
                         Edit
                     </a>
-                    <form action="{{ route('courses.destroy', $course->id) }}" method="post" class=" d-inline-block">
+                    <form action="{{ route('course.destroy', $course->id) }}" method="post" class=" d-inline-block">
                         @csrf
                         @method('delete')
                         <button class=" btn btn-danger">

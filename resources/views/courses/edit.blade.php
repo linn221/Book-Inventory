@@ -11,7 +11,7 @@
 </h4>
 
 {{-- update form, proudly copy & paste from courses.index --}}
-<form action="{{ route('courses.update', $course->id) }}" method="post">
+<form action="{{ route('course.update', $course->id) }}" method="post">
     @csrf
     @method('put')
     <div class="mt-4 p-2 w-50">

@@ -69,7 +69,7 @@
             @empty
                 Create a fucking course
             @endforelse
-            <a href="{{ route('courses.index') }}" class=" btn btn-sm btn-primary ms-3">
+            <a href="{{ route('course.index') }}" class=" btn btn-sm btn-primary ms-3">
                 Create Course
             </a>
 
