@@ -118,6 +118,61 @@ public function destroy(Book $book) { $book->delete(); }
 
 :warning: use `<thead>` + `<tbody>`, not `<th><tr>` (for some reasons, i was convinced th for thead)
 
+-----------------------------------------------------------------------------------------------------
+
+### Eloquent when: *conditional query*
+
+```php
+$query = Model::query();
+$query->when($conditional, function ($q) {
+    // run me if true
+);
+```
+*provide third argument for false case*
+
+-----------------------------------------------------------------------------------------------------
+
+### Session variables
+*using `Request $request`*
+```php
+$request->session()->get('coffee', 'default');
+$request->session()->put('coffee', 'gone');
+```
+
+*using helper `request()`*
+```php
+session('coffee', 'default');
+session(['coffee' => 'gone']);
+```
+
+-----------------------------------------------------------------------------------------------------
+
+### Give data to closure function
+```php
+Book::when($request->has('param'), function($q) use ($request) { $q-> }
+```
+
+-----------------------------------------------------------------------------------------------------
+
+<details>
+<summary>This App</summary>
+
+```php
+$query  = Model::query();
+$query->when($request->has('order'), function($q) use ($request) {
+
+// using session for toggling ascend and descend
+$sort = $request->session()->get('sort', 'asc');
+$sort_toggled = $sort === 'asc' ? 'desc' : 'asc';
+$request->session()->put('sort', $sort_toggled);
+$order_column = request()->input('order');
+
+$q->orderBy($order_column, $sort);
+})
+
+```
+
+</details>
 <!--
 copy me for templates!
 ```
