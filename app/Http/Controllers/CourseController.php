@@ -17,6 +17,13 @@ class CourseController extends Controller
 
     public function store(Request $request) {
         // yellow, any chance to pass the attribute in constructor directly?
+        // using validate method bcoz im cool
+
+        $request->validate([
+            'name' => "required|min:2|max:20|unique:courses,name",
+            'note' => "present"
+        ]);
+
         $course = new Course();
         $course->name = $request->input('name');
         $course->note = $request->input('note');

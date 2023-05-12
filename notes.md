@@ -173,7 +173,34 @@ $q->orderBy($order_column, $sort);
 ```
 
 </details>
+
+-----------------------------------------------------------------------------------------------------
+
+*can use `present` rule for optional field that has to present in form but can be empty*
+
+-----------------------------------------------------------------------------------------------------
+
+#### Snippets (from laravel docs)
+<details>
+    <summary>Display all errors</summary>
+
+```php
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+```
+</details>
 <!--
 copy me for templates!
 ```
+<details>
+    <summary>
+    </summary>
+</details>
 -----------------------------------------------------------------------------------------------------
