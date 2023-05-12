@@ -38,6 +38,10 @@ class CourseController extends Controller
     }
 
     public function update(Course $course, Request $request) {
+        $request->validate([
+            'name' => "required|min:2|max:20|unique:courses,name,$course->id",
+            'note' => "present"
+        ]);
         $course->name = $request->name;
         $course->note = $request->note;
         $course->update();
