@@ -180,6 +180,18 @@ $q->orderBy($order_column, $sort);
 
 -----------------------------------------------------------------------------------------------------
 
+### Display validation errors (bootstrap)
+
+```php
+@error("name") is-invalid @enderror">
+
+@error('name')
+    <div class=" invalid-feedback">{{ $message }}</div>
+@enderror
+```
+
+-----------------------------------------------------------------------------------------------------
+
 #### Snippets (from laravel docs)
 <details>
     <summary>Display all errors</summary>

@@ -19,7 +19,12 @@
         name="name"
         placeholder="Course Name"
         value="{{ $course->name }}"
-        class=" form-control w-75 mb-3">
+        class=" form-control w-75 mb-3
+        @error("name") is-invalid @enderror">
+
+        @error('name')
+            <div class=" invalid-feedback">{{ $message }}</div>
+        @enderror
 
         <label for="" class=" form-label">
             Notes

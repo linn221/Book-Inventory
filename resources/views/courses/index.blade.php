@@ -7,16 +7,6 @@
 
 @section('content')
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
 <h4>
     Add a new course
 </h4>
@@ -33,10 +23,15 @@
     @csrf
     <div class="mt-4 p-2 w-50">
         <input type="text"
-        name="name"
-        placeholder="Course Name"
-        class=" form-control w-75 mb-3"
-        autofocus>
+            name="name"
+            placeholder="Course Name"
+            class=" form-control
+            w-75 mb-3
+            autofocus
+            @error("name") is-invalid @enderror">
+            @error('name')
+                <div class=" invalid-feedback">{{ $message }}</div>
+            @enderror
         <label for="" class=" form-label"> Notes </label>
         <textarea name="note" class=" form-control w-75 mb-3"></textarea>
         <button class=" btn btn-primary">
