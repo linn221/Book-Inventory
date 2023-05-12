@@ -47,12 +47,12 @@
 
 ### 2023-05-10 Thu
 - [x] toggle ascending and descending (used session)
-- [!] validate course basic, unique name, with limited character length
+- [x] validate course basic, unique name, with limited character length
 
 - [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
-- [!] course table's name column have to be unique
+- [x] course table's name column have to be unique
 - [x] change courses to singular route name
 
 ### Bugs
