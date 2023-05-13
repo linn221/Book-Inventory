@@ -60,24 +60,39 @@
         </div>
 
         <div class="mb-3">
-            <fieldset>
+            <fieldset class="">
                 <legend>Books</legend>
 
-                @forelse ($books as $book)
-                    <input type="checkbox"
-                    name="books[]"
-                    id="{{ $book->id }}"
-                    value="{{ $book->id }}"
-                    class=" form-check-input">
-                    <label for="{{ $book->id }}"
-                        class=" form-check-label">
-                        {{ $book->name }} ({{ $book->price }} MMK)
-                    </label>
-                    <br>
-                @empty
+                <div class="row">
+                    @forelse ($books as $book)
+                    <div class=" col-6">
 
-                @endforelse
+                        <input type="checkbox"
+                            name="books[]"
+                            id="{{ $book->id }}"
+                            value="{{ $book->id }}"
+                            class=" form-check-input">
+                        <label for="{{ $book->id }}" class=" form-check-label">
+                            {{ $book->name }} ({{ $book->price }} MMK)
+                        </label>
+                    </div>
+                    @empty
+
+                    @endforelse
+                </div>
             </fieldset>
+        </div>
+
+        <div class=" mb-3">
+            Total Price:
+            <span class=" text-success">
+                3,000
+            </span>
+            <input type="checkbox" name="paid" id="paid"
+            class=" ms-3 form-check-input">
+            <label for="paid" class=" form-check-label">
+                Paid
+            </label>
         </div>
 
         <button class=" btn btn-primary">
