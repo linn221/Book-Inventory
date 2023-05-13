@@ -63,7 +63,7 @@
 ### Bugs
 - [x] in course form, one additional tab has 
 - [x] course listing table become inline after first item
-- [ ] details page, course has been an array instead of just the name
+- [x] details page, course has been an array instead of just the name
 
 
 

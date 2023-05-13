@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td>Course</td>
-            <td>{{ $book->course }}</td>
+            <td>{{ $book->course->name }}</td>
         </tr>
         <tr>
             <td>Price</td>
