@@ -13,12 +13,17 @@
 @endif
     <h4>Book List</h4>
 
-    <form action="{{ route('book.index') }}" method="get">
-        <input type="text" name="search" value="{{ $search }}">
-        <button class=" btn btn-primary">
-            Search
-        </button>
-    </form>
+    <div class=" d-flex justify-content-between">
+        <a href="{{ route('book.create') }}" class=" btn btn-outline-primary">
+            Add new
+        </a>
+        <form action="{{ route('book.index') }}" method="get">
+            <input type="text" name="search" value="{{ $search }}">
+            <button class=" btn btn-primary">
+                Search
+            </button>
+        </form>
+    </div>
 
     <table class=" table">
         <thead>
