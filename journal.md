@@ -45,10 +45,15 @@
 - [x] sort by column function in book.index
 - [x] book.create as well, use old() helper
 
-### 2023-05-10 Thu
+### 2023-05-11 Thu
 - [x] toggle ascending and descending (used session)
 - [x] validate course basic, unique name, with limited character length
 
+### 2023-05-13 Sat
+- [x] create form for purchase
+- [ ] purchase model, migration
+- [ ] implement submitting purchase
+- [ ] list purchases
 - [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
@@ -58,6 +63,7 @@
 ### Bugs
 - [x] in course form, one additional tab has 
 - [x] course listing table become inline after first item
+- [ ] details page, course has been an array instead of just the name
 
 
 

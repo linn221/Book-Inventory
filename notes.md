@@ -192,7 +192,32 @@ $q->orderBy($order_column, $sort);
 
 -----------------------------------------------------------------------------------------------------
 
-#### Snippets (from laravel docs)
+<details>
+    <summary>
+        HTML input element
+    </summary>
+
+```php
+<div class="mb-3">
+    <label for="" class=" form-label">
+        Coffee
+    </label>
+    <input
+    type="text"
+    name="coffee"
+    value="{{ old('coffee') }}"
+    class=" form-control @error("coffee") is-invalid @enderror"
+    autofocus>
+
+    @error('coffee')
+        <div class=" invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+```
+</details>
+
+-----------------------------------------------------------------------------------------------------
+
 <details>
     <summary>Display all errors</summary>
 
@@ -208,11 +233,17 @@ $q->orderBy($order_column, $sort);
 @endif
 ```
 </details>
+
+
+<!-- copy me for templates!
 <!--
-copy me for templates!
-```
 <details>
     <summary>
+
     </summary>
+    ```
+
+    ```
 </details>
 -----------------------------------------------------------------------------------------------------
+-->
