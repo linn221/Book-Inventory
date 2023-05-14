@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PurchaseController;
 use App\Models\Book;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -30,15 +31,7 @@ Route::get("/courses/{course}", [CourseController::class, 'edit'])->name('course
 Route::put('/courses/{course}', [CourseController::class, 'update'])->name('course.update');
 Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('course.destroy');
 
-Route::get("/sell", function() {
-    $books = Book::all();
-    $courses = Course::all();
-    return view("purchases.create", compact("books", "courses"));
-})->name('purchases.create');
-
-Route::post("/sell", function(Request $request) {
-    return $request->all();
-});
+Route::resource("purchase", PurchaseController::class);
 
 // Route::post();
 // Route::get('/coffee', [BookController::class, "coffee"]);

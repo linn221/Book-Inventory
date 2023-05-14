@@ -51,10 +51,12 @@
 
 ### 2023-05-13 Sat
 - [x] create form for purchase
-- [ ] purchase model, migration
-- [ ] implement submitting purchase
+
+### 2023-05-14 Sun
+- [!] Student model, migration, controller
+- [!] Purchase model, migration, controller
+- [!] implement submitting purchase
 - [ ] list purchases
-- [ ] make the course clickable link, which filter the list of books by that id
 
 ### Refactoring
 - [x] course table's name column have to be unique
@@ -71,4 +73,5 @@
 - show ins and outs of stock (+5 or -1 at the stock column)
 - [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
 - [ ] warn me when deleting something that will delete related data from a different table
+- [ ] make the course clickable link, which filter the list of books by that id
 - [ ] 
