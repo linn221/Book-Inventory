@@ -9,7 +9,7 @@
         Add purchase
     </h4>
 
-    <form action="" method="post">
+    <form action="{{ route('purchase.store') }}" method="post">
         @csrf
         <div class="mb-3">
             <label for="" class=" form-label">
