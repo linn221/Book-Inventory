@@ -53,10 +53,11 @@
 - [x] create form for purchase
 
 ### 2023-05-14 Sun
-- [!] Student model, migration, controller
-- [!] Purchase model, migration, controller
-- [!] implement submitting purchase
-- [ ] list purchases
+- [x] Student model, migration, controller
+- [x] Purchase model, migration, controller
+- [!] implement purchase.store
+- [!] list purchases
+- [!] show purchase
 
 ### Refactoring
 - [x] course table's name column have to be unique

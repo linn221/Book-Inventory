@@ -6,6 +6,7 @@ use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
 use App\Models\Course;
 use App\Models\Purchase;
+use App\Models\Student;
 
 class PurchaseController extends Controller
 {
@@ -33,6 +34,25 @@ class PurchaseController extends Controller
      */
     public function store(StorePurchaseRequest $request)
     {
+        // return $request->all();
+
+        // save student
+        $student = new Student;
+        $student->name = $request->name;
+        $student->roll_no = $request->roll_no;
+        $student->course_id = $request->course;
+        $student->paid = $request->has('paid') ? 'yes' : 'no';
+        $student->save();
+
+        // record the purchases
+        $books = $request->books;
+        foreach($books as $book_id) {
+            Purchase::create([
+                'student_id' => $student->id,
+                'book_id' => $book_id
+            ]);
+        }
+        return redirect()->back();
         //
     }
 
