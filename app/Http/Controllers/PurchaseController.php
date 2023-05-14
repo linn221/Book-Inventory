@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
+use App\Models\Book;
 use App\Models\Course;
 use App\Models\Purchase;
 use App\Models\Student;
@@ -25,7 +26,7 @@ class PurchaseController extends Controller
     {
         //
         $courses = Course::all();
-        $books = Course::all();
+        $books = Book::all();
         return view("purchases.create", compact('courses', 'books'));
     }
 
