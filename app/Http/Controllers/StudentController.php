@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePurchaseRequest;
-use App\Http\Requests\UpdatePurchaseRequest;
+use App\Http\Requests\StoreStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Book;
 use App\Models\Course;
 use App\Models\Purchase;
 use App\Models\Student;
 
-class PurchaseController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
         $students = Student::all();
         return view('purchases.index', compact('students'));
+        //
     }
 
     /**
@@ -26,6 +26,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
+        //
         //
         $courses = Course::all();
         $books = Book::all();
@@ -35,9 +36,9 @@ class PurchaseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePurchaseRequest $request)
+    public function store(StoreStudentRequest $request)
     {
-        // return $request->all();
+        //
 
         // save student
         $student = new Student;
@@ -56,13 +57,12 @@ class PurchaseController extends Controller
             ]);
         }
         return redirect()->back();
-        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Purchase $purchase)
+    public function show(Student $student)
     {
         //
     }
@@ -70,7 +70,7 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Purchase $purchase)
+    public function edit(Student $student)
     {
         //
     }
@@ -78,7 +78,7 @@ class PurchaseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePurchaseRequest $request, Purchase $purchase)
+    public function update(UpdateStudentRequest $request, Student $student)
     {
         //
     }
@@ -86,7 +86,7 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Purchase $purchase)
+    public function destroy(Student $student)
     {
         //
     }
