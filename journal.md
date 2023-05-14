@@ -55,9 +55,10 @@
 ### 2023-05-14 Sun
 - [x] Student model, migration, controller
 - [x] Purchase model, migration, controller
-- [!] implement purchase.store
-- [!] list purchases
+- [x] implement purchase.store
+- [x] list purchases
 - [!] show purchase
+- [!] edit purchase
 - [!] CRUD purchase
 - [ ] validation
 - [ ] repopulating
