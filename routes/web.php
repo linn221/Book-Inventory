@@ -34,7 +34,7 @@ Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('
 
 // Route::resource("courses", [CourseController::class]);
 
-Route::resource("purchase", StudentController::class);
+Route::resource("student", StudentController::class);
 
 // Route::post();
 // Route::get('/coffee', [BookController::class, "coffee"]);

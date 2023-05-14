@@ -57,7 +57,7 @@ class StudentController extends Controller
             ]);
         }
         $status = "Student#$student->id has purchased " . count($books) . " books.";
-        return redirect()->route("purchase.index")->with("status", $status);
+        return redirect()->route("student.index")->with("status", $status);
     }
 
     /**
@@ -91,7 +91,7 @@ class StudentController extends Controller
     {
         $status = "Deleted student#$student->id";
         $student->delete();
-        return redirect()->route('purchase.index')->with('status', $status);
+        return redirect()->route('student.index')->with('status', $status);
         //
     }
 }

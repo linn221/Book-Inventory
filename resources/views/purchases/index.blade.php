@@ -73,16 +73,16 @@
                 Books
             </td>
             <td>
-                <a href="{{ route('purchase.edit', $student->id) }}" class=" btn btn-sm btn-warning">
+                <a href="{{ route('student.edit', $student->id) }}" class=" btn btn-sm btn-warning">
                     Edit
                 </a>
-                <a href="{{ route('purchase.show', $student->id) }}" class=" btn btn-sm btn-primary">
+                <a href="{{ route('student.show', $student->id) }}" class=" btn btn-sm btn-primary">
                     Details
                 </a>
-                <form action="{{ route('purchase.destroy', $student->id) }}" method="post" class=" d-inline-block">
+                <form action="{{ route('student.destroy', $student->id) }}" method="post" class=" d-inline-block">
                     @csrf
                     @method('delete')
-                    <button href="{{ route('purchase.destroy', $student->id) }}" class=" btn btn-sm btn-danger">
+                    <button class=" btn btn-sm btn-danger">
                         Delete
                     </button>
                 </form>

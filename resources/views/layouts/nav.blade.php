@@ -19,10 +19,10 @@
     <p class="mt-3 my-2">Manage Purchases</p>
 
     <div class=" list-group">
-        <a href="{{ route("purchase.create") }}" class=" list-group-item list-group-item-action">
+        <a href="{{ route("student.create") }}" class=" list-group-item list-group-item-action">
             New Purchase
         </a>
-        <a href="{{ route("purchase.index") }}" class=" list-group-item list-group-item-action">
+        <a href="{{ route("student.index") }}" class=" list-group-item list-group-item-action">
             Records
         </a>
     </div>
