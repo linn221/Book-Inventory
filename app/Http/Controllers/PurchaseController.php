@@ -17,6 +17,8 @@ class PurchaseController extends Controller
     public function index()
     {
         //
+        $students = Student::all();
+        return view('purchases.index', compact('students'));
     }
 
     /**
