@@ -56,7 +56,7 @@ class StudentController extends Controller
                 'book_id' => $book_id
             ]);
         }
-        return redirect()->back();
+        return redirect()->route("purchase.index");
     }
 
     /**
