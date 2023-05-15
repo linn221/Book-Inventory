@@ -13,7 +13,8 @@ class Student extends Model
     // primary key to foreign key
     public function purchases()
     {
-        return $this->hasMany(Purchase::class);
+        // students.id = purchases.student_id
+        return $this->hasMany(Purchase::class, 'student_id', 'id');
         // return $this->hasMany(Purchase::class, 'foreign_key', 'local_key');
     }
 }

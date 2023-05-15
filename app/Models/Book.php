@@ -18,8 +18,7 @@ class Book extends Model
     ];
 
     public function course() {
-        // return $this->hasOne(Course::class, 'id', 'course_id');
-        // i don't have a full idea what is happening 
-        return $this->belongsTo(Course::class);
+        // book.course_id = courses.id
+        return $this->belongsTo(Course::class, 'course_id', 'id');
     }
 }

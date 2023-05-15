@@ -13,7 +13,14 @@ class Purchase extends Model
     // purchase table has book_id column
     public function book()
     {
-        return $this->belongsTo(Book::class);
+        // purchases.book_id = books.id
+        return $this->belongsTo(Book::class, 'book_id', 'id');
+    }
+
+    public function student()
+    {
+        // purchases.student_id = students.id
+        return $this->belongsTo(Student::class, 'student_id', 'id');
     }
 
 }

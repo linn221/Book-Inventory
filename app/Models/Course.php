@@ -13,4 +13,10 @@ class Course extends Model
         'name',
         'note'
     ];
+
+    public function books()
+    {
+        // courses.id = books.course_id
+        return $this->hasMany(Book::class, 'course_id', 'id');
+    }
 }
