@@ -17,4 +17,10 @@ class Student extends Model
         return $this->hasMany(Purchase::class);
         // return $this->hasMany(Purchase::class, 'foreign_key', 'local_key');
     }
+
+    public function course()
+    {
+        // students.course_id = courses.id
+        return $this->belongsTo(Course::class);
+    }
 }

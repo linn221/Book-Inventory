@@ -59,7 +59,7 @@
             </td>
             <td>
                 {{-- yellow --}}
-                {{ $student->course_id }}
+                {{ $student->course->name }}
             </td>
             <td>
                 {{-- yellow --}}
@@ -69,8 +69,13 @@
                 {{ $student->paid }}
             </td>
             <td>
-                {{-- yellow --}}
-                Books
+                <ul>
+                    @foreach ($student->purchases as $purchases)
+                    <li>
+                        {{ $purchases->book->name }}
+                    </li>
+                    @endforeach
+                </ul>
             </td>
             <td>
                 <a href="{{ route('student.edit', $student->id) }}" class=" btn btn-sm btn-warning">
