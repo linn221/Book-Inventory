@@ -14,7 +14,7 @@ class Student extends Model
     public function purchases()
     {
         // students.id = purchases.student_id
-        return $this->hasMany(Purchase::class, 'student_id', 'id');
+        return $this->hasMany(Purchase::class);
         // return $this->hasMany(Purchase::class, 'foreign_key', 'local_key');
     }
 }

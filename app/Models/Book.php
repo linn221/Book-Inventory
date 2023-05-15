@@ -19,6 +19,6 @@ class Book extends Model
 
     public function course() {
         // book.course_id = courses.id
-        return $this->belongsTo(Course::class, 'course_id', 'id');
+        return $this->belongsTo(Course::class);
     }
 }

@@ -300,10 +300,13 @@ class Post extends Model
 
 *Do I have a clear idea? no. I am trying to make sense to them*
 #### SUMMARY
-*`hasMany()`, `hasOne()`*
-\*model's **primary key** is in method table*
-*`belongTo()`*
-\*model's **foreign key** belong to method table*
+`hasMany()`, `hasOne()`
+\
+*model's **primary key** is in method table* (`model.id = method.model_id`)
+\
+`belongTo()`
+\
+*model's **foreign key** belongs to method table* (`model.method_id = method.id`)
 
 -----------------------------------------------------------------------------------------------------
 
