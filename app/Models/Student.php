@@ -14,5 +14,6 @@ class Student extends Model
     public function purchases()
     {
         return $this->hasMany(Purchase::class);
+        // return $this->hasMany(Purchase::class, 'foreign_key', 'local_key');
     }
 }

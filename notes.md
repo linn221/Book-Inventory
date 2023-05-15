@@ -241,6 +241,7 @@ $q->orderBy($order_column, $sort);
 
 #### One to one (*hasOne()*)
 *model's primary key is the foreign key model_id in method table*
+\
 **users.id = phones.user_id**
 
 ```php
@@ -249,15 +250,19 @@ class User extends Model
     /**
      * Get the phone associated with the user.
      */
+
     public function phone(): HasOne
     {
         return $this->hasOne(Phone::class);
+        return $this->hasOne(Phone::class, 'foreign_key', 'local_key');
+        return $this->hasOne(Phone::class, $model_name . "_id", $model->primaryKey);
     }
 }
 ```
 
 #### One to one inverse (*belongsTo()*)
 *model's foreign key is the primary key of the method table*
+\
 **phones.user_id = user.id**
 
 ```php
@@ -269,12 +274,15 @@ class Phone extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'foreign_key', 'owner_key');
+        return $this->belongsTo(User::class, $method_name . "_id", "id");
     }
 }
 ```
 
 #### One to many (*hasMany()*)
 *model's primary key is the foreign key model_id in method table, and has many records*
+\
 **posts.id = comments.post_id**
 
 ```php
