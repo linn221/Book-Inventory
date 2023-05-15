@@ -57,14 +57,14 @@
 - [x] Purchase model, migration, controller
 - [x] implement purchase.store
 - [x] list purchases
-- [!] show purchase
+- [x] show purchase
 - [!] edit purchase
 - [!] CRUD purchase
+- [ ] calculate total purchase `$student->total`
+- [ ] eloquent relationships: `$student->books`, `$student->course->name`
 - [ ] validation
 - [ ] repopulating
 - [ ] status alert
-- [ ] calculate total purchase `$student->total`
-- [ ] eloquent relationships: `$student->books`, `$student->course->name`
 
 ### Refactoring
 - [x] course table's name column have to be unique

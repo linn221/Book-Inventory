@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
+
+    // purchases table has student_id column
+    // primary key to foreign key
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
 }

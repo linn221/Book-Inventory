@@ -234,6 +234,65 @@ $q->orderBy($order_column, $sort);
 ```
 </details>
 
+-----------------------------------------------------------------------------------------------------
+
+### Eloquent Relationships
+*i don't have much knowledge of the stuff, and it's kinda advanced but from what i understand:*
+
+#### One to one (*hasOne()*)
+*model's primary key is the foreign key model_id in method table*
+**users.id = phones.user_id**
+
+```php
+class User extends Model
+{
+    /**
+     * Get the phone associated with the user.
+     */
+    public function phone(): HasOne
+    {
+        return $this->hasOne(Phone::class);
+    }
+}
+```
+
+#### One to one inverse (*belongsTo()*)
+*model's foreign key is the primary key of the method table*
+**phones.user_id = user.id**
+
+```php
+class Phone extends Model
+{
+    /**
+     * Get the user that owns the phone.
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+```
+
+#### One to many (*hasMany()*)
+*model's primary key is the foreign key model_id in method table, and has many records*
+**posts.id = comments.post_id**
+
+```php
+class Post extends Model
+{
+    /**
+     * Get the comments for the blog post.
+     */
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+}
+```
+
+*Do I have a clear idea? no. I am trying to make sense to them*
+
+-----------------------------------------------------------------------------------------------------
 
 <!-- copy me for templates!
 <!--

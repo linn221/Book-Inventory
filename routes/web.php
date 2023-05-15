@@ -6,6 +6,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\StudentController;
 use App\Models\Book;
 use App\Models\Course;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,17 @@ Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('
 // Route::resource("courses", [CourseController::class]);
 
 Route::resource("student", StudentController::class);
+
+Route::get('/coffee', function() {
+    $student = Student::findOrFail(3);
+
+    $purchases = $student->purchases;
+    $response = '';
+    foreach($purchases as $p) {
+        $response .= $p->book->name;
+    }
+    return $response;
+});
 
 // Route::post();
 // Route::get('/coffee', [BookController::class, "coffee"]);
