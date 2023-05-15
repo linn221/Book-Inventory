@@ -69,13 +69,7 @@
                 {{ $student->paid }}
             </td>
             <td>
-                <ul>
-                    @foreach ($student->purchases as $purchases)
-                    <li>
-                        {{ $purchases->book->name }}
-                    </li>
-                    @endforeach
-                </ul>
+                {{ $student->purchases->count() }}
             </td>
             <td>
                 <a href="{{ route('student.edit', $student->id) }}" class=" btn btn-sm btn-warning">

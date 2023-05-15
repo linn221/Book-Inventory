@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td>Course</td>
-            <td>{{ $student->course_id }}</td>
+            <td>{{ $student->course->name }}</td>
         </tr>
         <tr>
             <td>Total price</td>
@@ -33,7 +33,13 @@
         <tr>
             <td>Books</td>
             <td>
-
+                <ul>
+                    @foreach ($student->purchases as $purchase)
+                    <li>
+                        {{ $purchase->book->name }}
+                    </li>
+                    @endforeach
+                </ul>
             </td>
         </tr>
         <tr>
