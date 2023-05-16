@@ -90,8 +90,8 @@
                 3,000
             </span>
             <input type="checkbox" name="paid" id="paid"
-            class=" ms-3 form-check-input">
-            <label for="paid" class=" form-check-label">
+            class=" ms-3 form-check-input" {{ $student->paid == 'yes' ? 'checked' : '' }}>
+            <label for="paid" class=" form-check-label"">
                 Paid
             </label>
         </div>
