@@ -74,6 +74,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
+        $courses = Course::all();
+        $books = Book::all();
+        return view("purchases.edit", compact('student'));
         //
     }
 

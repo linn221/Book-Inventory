@@ -58,13 +58,16 @@
 - [x] implement purchase.store
 - [x] list purchases
 - [x] show purchase
+- [x] status alert
+
+### 2023-05-14 Sun
+- [x] eloquent relationships: `$student->books`, `$student->course->name`
+- [!] add javascript to create+edit forms
 - [!] edit purchase
 - [!] CRUD purchase
-- [ ] calculate total purchase `$student->total`
-- [ ] eloquent relationships: `$student->books`, `$student->course->name`
-- [ ] validation
 - [ ] repopulating
-- [ ] status alert
+- [ ] validation
+- [ ] calculate total purchase `$student->total`
 
 ### Refactoring
 - [x] course table's name column have to be unique
