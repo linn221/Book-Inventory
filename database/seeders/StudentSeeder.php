@@ -39,7 +39,18 @@ class StudentSeeder extends Seeder
                 'Jim',
                 'Daniels',
                 'Millie',
-                'May'
+                'May',
+                'Parker',
+                'Dani',
+                'Walker',
+                'Mary',
+                'Jane',
+                'James',
+                'Taylor',
+                'Malory',
+                'Eve',
+                'Bob',
+                'Alice'
             ];
             $year = $i % 4 + 1;
             $no = intval($i / 5) + 1;

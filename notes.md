@@ -355,6 +355,24 @@ php artisan migrate:fresh --seed --seeder=StduentSeeder
 
 -----------------------------------------------------------------------------------------------------
 
+### informative
+`DB::table('students')->insert(['col' => 'row']);`
+`DB::table('students')->insertGetId(['col' => 'row']);` *returns the inserted id*
+
+### random
+```php
+// support\Arr
+Arr::random([1,2,3]);
+$collections->random($count);   // return a random collection of $count number of items
+$collections->pluck('id');       // returns an indexed ARRAY with each value being id
+```
+
+-----------------------------------------------------------------------------------------------------
+
+*have to drop the child tables first, in order to drop a parent table*
+
+-----------------------------------------------------------------------------------------------------
+
 <!-- copy me for templates!
 <!--
 <details>
@@ -364,6 +382,7 @@ php artisan migrate:fresh --seed --seeder=StduentSeeder
     ```
 
     ```
+]
 </details>
 -----------------------------------------------------------------------------------------------------
 -->
