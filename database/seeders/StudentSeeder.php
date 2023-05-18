@@ -20,8 +20,7 @@ class StudentSeeder extends Seeder
         //
         $integers = [1, 2, 3, 4, 5, 2, 3, 3, 4];
         $books = Book::all();
-        $latest_id = DB::table('students')->latest()->first('id')->id ?? 1;
-        for($id = $latest_id; $id < $latest_id + 200; $id++) {
+        for($i = 0; $i < 200; $i++) {
             // fucking smart syntax here
             $names = [
                 'Charlie',
@@ -42,13 +41,13 @@ class StudentSeeder extends Seeder
                 'Millie',
                 'May'
             ];
-            $year = $id % 5;
-            $no = $id / 5;
-            $roll_no = $year . 'CS' . $no;
+            $year = $i % 4 + 1;
+            $no = intval($i / 5) + 1;
+            $roll_no = $year . 'CS-' . $no;
             $name = Arr::random($names) . " " . Arr::random($names);
-            $paid = $id % 3 ? 'no' : 'yes';
+            $paid = $i % 3 ? 'no' : 'yes';
 
-        DB::table('students')->insert([
+        $student_id = DB::table('students')->insertGetId([
             'name' => $name,
             'roll_no' => $roll_no,
             'paid' => $paid,
@@ -58,7 +57,7 @@ class StudentSeeder extends Seeder
         $purchases = $books->random(Arr::random($integers))->pluck('id');
         foreach($purchases as $book_id) {
             DB::table('purchases')->insert([
-                'student_id' => $id,
+                'student_id' => $student_id,
                 'book_id' => $book_id
             ]);
             }
