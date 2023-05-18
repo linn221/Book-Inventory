@@ -20,7 +20,7 @@ class StudentSeeder extends Seeder
         //
         $integers = [1, 2, 3, 4, 5, 2, 3, 3, 4];
         $books = Book::all();
-        $latest_id = DB::table('students')->latest()->first('id')->id + 1;
+        $latest_id = DB::table('students')->latest()->first('id')->id ?? 1;
         for($id = $latest_id; $id < $latest_id + 200; $id++) {
             // fucking smart syntax here
             $names = [
