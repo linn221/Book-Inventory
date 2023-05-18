@@ -310,6 +310,51 @@ class Post extends Model
 
 -----------------------------------------------------------------------------------------------------
 
+### Seeding
+#### create a seeder class
+
+```shell
+php artisan make:seeder StudentSeeder
+```
+
+#### define `run()` method for how to seed
+*could use Eloquent Factory, but I am going with a simpler approach, bcoz why not?*
+
+```php
+public function run(): void
+{
+    DB::table('users')->insert([
+        'name' => Str::random(10),
+        'email' => Str::random(10).'@gmail.com',
+        'password' => Hash::make('password'),
+    ]);
+}
+
+```
+
+#### Call the seeder in main DatabaseSeeder class's run
+
+```php
+public function run(): void
+{
+    $this->call([
+        StudentSeeder::class,
+    ]);
+}
+```
+*informative*
+```shell
+php artisan db:seed
+php artisan migrate:fresh --seed
+```
+*can run an isolated seeder like this*
+```shell
+php artisan db:seed --class=StudentSeeder
+php artisan migrate:fresh --seed --seeder=StduentSeeder
+```
+
+-----------------------------------------------------------------------------------------------------
+
 <!-- copy me for templates!
 <!--
 <details>

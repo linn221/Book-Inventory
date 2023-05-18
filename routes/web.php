@@ -9,6 +9,8 @@ use App\Models\Course;
 use App\Models\Purchase;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,8 +48,11 @@ Route::get('/coffee', function() {
     // foreach($purchases as $p) {
     //     $response .= $p->book->name;
     // }
-    $purchases = Purchase::all()->last();
-    return $purchases->book;
+    // $integers = [1, 2, 3, 4, 5, 2, 3, 3, 4];
+    // $books = Book::all();
+    // return $books->random(Arr::random($integers))->pluck('id')[0];
+        $latest_id = DB::table('students')->latest()->first('id')->id;
+        return $latest_id;
     // return $response;
 });
 
