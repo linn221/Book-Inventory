@@ -373,6 +373,27 @@ $collections->pluck('id');       // returns an indexed ARRAY with each value bei
 
 -----------------------------------------------------------------------------------------------------
 
+### Accessors (get a custom attribute)
+```php
+protected function firstName(): Attribute
+{
+    return Attribute::make(
+        get: fn (string $value, array $attributes) => ucfirst($value),
+        // $attributes being the model instance type casted as associative array
+    );
+}
+```
+```php
+    $model->first_name;
+```
+
+### Informative
+#### Accessors let you *access* an attribute, and *mutators* allow you to set them, or *update*.
+#### Can use type casting by `protected $casts`, useful when deseralizing JSON to array/collection, or decrypting encrypted row data
+
+
+-----------------------------------------------------------------------------------------------------
+
 <!-- copy me for templates!
 <!--
 <details>
