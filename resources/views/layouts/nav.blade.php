@@ -1,7 +1,7 @@
 <aside>
 
     <div class=" list-group">
-        <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action">
+        <a href="{{ route("index") }}" class=" list-group-item list-group-item-action">
             Home
         </a>
     </div>
@@ -42,6 +42,10 @@
         </a>
     </div>
 
-
+    <div class=" list-group">
+        <a href="{{ route("coffee") }}" class=" list-group-item list-group-item-action text-success">
+            Coffee
+        </a>
+    </div>
 
 </aside>

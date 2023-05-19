@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('main');
-})->name('coffee');
+})->name('index');
 
 Route::resource("book", BookController::class);
 
@@ -51,10 +51,12 @@ Route::get('/coffee', function() {
     // $integers = [1, 2, 3, 4, 5, 2, 3, 3, 4];
     // $books = Book::all();
     // return $books->random(Arr::random($integers))->pluck('id')[0];
-        $latest_id = DB::table('students')->latest()->first('id')->id;
-        return $latest_id;
+        // $latest_id = DB::table('students')->latest()->first('id')->id;
+        // return $latest_id;
     // return $response;
-});
+    $student = Student::findOrFail(404);
+    return $student;
+})->name('coffee');
 
 // Route::post();
 // Route::get('/coffee', [BookController::class, "coffee"]);
