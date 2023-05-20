@@ -72,7 +72,7 @@
 - [x] calculate total purchase `$student->total`    \
     *create a method for getting the sum of books's price whose ids are in the argument array*\
     *solved proudly by using an accessor method*
-- [ ] display paid columns as checkbox, but keeps yes|no value on details
+- [x] display paid columns as checkbox, but keeps yes|no value on details
 - [ ] edit purchase, select chosen books, they are not related to course for the moment
 - [ ] CRUD purchase
 - [ ] add javascript to create+edit forms

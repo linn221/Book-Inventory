@@ -65,7 +65,16 @@
                 {{ number_format($student->total_bill); }}
             </td>
             <td>
-                {{ $student->paid }}
+                @if ($student->paid)
+                    <span class=" h4 text-success">
+                        &#x2611;
+                    </span> 
+                @else
+                    <span class=" h4 text-danger">
+                        &#x2612;
+                    </span> 
+                @endif
+                {{-- {{ $student->paid }} --}}
             </td>
             <td>
                 {{ $student->purchases->count() }}

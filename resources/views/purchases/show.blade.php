@@ -29,7 +29,17 @@
         <tr>
             <td>Paid</td>
             <td>
-                {{ $student->paid }}
+                {{-- <input type="checkbox" name="" id="" {{ $student->paid ? 'checked' : '' }}> --}}
+                @if ($student->paid)
+                    <span class=" h4 text-success">
+                        &#x2611;
+                    </span> 
+                @else
+                    <span class=" h4 text-danger">
+                        &#x2612;
+                    </span> 
+                @endif
+                {{-- {{ $student->paid }} --}}
             </td>
         </tr>
         <tr>

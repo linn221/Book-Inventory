@@ -57,7 +57,7 @@ Route::get('/coffee', function() {
     // $id_list = $student->purchases->pluck('book_id');
     // $total_bill = Book::whereIn('id', $id_list)->sum('price');
     $student = Student::findOrFail(404);
-    return $student->total_bill;
+    return $student;
 })->name('coffee');
 
 // Route::post();
