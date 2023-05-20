@@ -54,8 +54,10 @@ Route::get('/coffee', function() {
         // $latest_id = DB::table('students')->latest()->first('id')->id;
         // return $latest_id;
     // return $response;
+    // $id_list = $student->purchases->pluck('book_id');
+    // $total_bill = Book::whereIn('id', $id_list)->sum('price');
     $student = Student::findOrFail(404);
-    return $student;
+    return $student->total_bill;
 })->name('coffee');
 
 // Route::post();

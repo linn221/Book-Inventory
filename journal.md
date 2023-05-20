@@ -67,7 +67,11 @@
 - [!] CRUD purchase
 - [ ] repopulating
 - [ ] validation
-- [ ] calculate total purchase `$student->total`
+
+### 2023-05-14 Sun
+- [!] calculate total purchase `$student->total`\
+    *create a method for getting the sum of books's price whose ids are in the argument array*
+- [ ] update seeder and fix created/updated_at column having NULL values
 
 ### Refactoring
 - [x] course table's name column have to be unique
@@ -85,4 +89,5 @@
 - [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
 - [ ] warn me when deleting something that will delete related data from a different table
 - [ ] make the course clickable link, which filter the list of books by that id
+- [!] extension for suggestions of eloquent method
 - [ ] 

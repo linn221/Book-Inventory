@@ -387,11 +387,21 @@ protected function firstName(): Attribute
     $model->first_name;
 ```
 
-### Informative
-#### Accessors let you *access* an attribute, and *mutators* allow you to set them, or *update*.
+### Accessors & Mutators
+#### Accessors let you **access** an attribute (*a custom one that does not exist on database or an existing column*), and **mutators** allow you to **set** them, or **update**. *(including existing columns on table, like **password**)*
 #### Can use type casting by `protected $casts`, useful when deseralizing JSON to array/collection, or decrypting encrypted row data
 
+*resource that ticks my mind* [How Accessors and Mutators work](https://www.youtube.com/watch?v=i4RGuYj7zi0)
 
+
+-----------------------------------------------------------------------------------------------------
+
+### Learn about a model
+```shell
+php artisan model:show Student
+```
+
+-----------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
 <!-- copy me for templates!
