@@ -40,6 +40,13 @@ class Student extends Model
     );
     }
 
+    protected function paid() : Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => $value === 'yes'
+        );
+    }
+
     // im not sure what this is doing here but keeping it for now
     // protected $attributes = [
     //     'intro' => "hello",
