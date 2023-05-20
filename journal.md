@@ -62,16 +62,23 @@
 
 ### 2023-05-14 Sun
 - [x] eloquent relationships: `$student->books`, `$student->course->name`
-- [!] add javascript to create+edit forms
-- [!] edit purchase
-- [!] CRUD purchase
-- [ ] repopulating
-- [ ] validation
 
 ### 2023-05-14 Sun
-- [!] calculate total purchase `$student->total`\
-    *create a method for getting the sum of books's price whose ids are in the argument array*
 - [ ] update seeder and fix created/updated_at column having NULL values
+- [ ] update the seeder using an eloquent factory, fixing the first issue as side effect
+
+### 2023-05-20 Sat
+*i don'nt know what is happening with my time line, might update it after reading the commits but wtf.*
+- [x] calculate total purchase `$student->total`    \
+    *create a method for getting the sum of books's price whose ids are in the argument array*\
+    *solved proudly by using an accessor method*
+- [ ] display paid columns as checkbox, but keeps yes|no value on details
+- [ ] edit purchase, select chosen books, they are not related to course for the moment
+- [ ] CRUD purchase
+- [ ] add javascript to create+edit forms
+- [ ] repopulating
+- [ ] validation
+- [ ] sort by id, name, paid
 
 ### Refactoring
 - [x] course table's name column have to be unique
@@ -89,5 +96,6 @@
 - [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
 - [ ] warn me when deleting something that will delete related data from a different table
 - [ ] make the course clickable link, which filter the list of books by that id
+- [ ] sort the purchase records by total_bill
 - [!] extension for suggestions of eloquent method
 - [ ] 

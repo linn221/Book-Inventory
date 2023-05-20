@@ -22,7 +22,9 @@
         </tr>
         <tr>
             <td>Total price</td>
-            <td>yellow</td>
+            <td>
+                {{ number_format($student->total_bill); }}
+            </td>
         </tr>
         <tr>
             <td>Paid</td>

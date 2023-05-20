@@ -31,7 +31,8 @@ class Student extends Model
         // working code, although i am not sure if this is how it's supposed to go
         return Attribute::make(
             get: function($value, $attributes) {
-                $student = Student::findOrFail(404);
+                // yellow, this has been written as a quick fix, i believe i should update it in someways later (maybe relationships, idk)
+                $student = Student::findOrFail($attributes['id']);
                 $id_list = $student->purchases->pluck('book_id');
                 $total_bill = Book::whereIn('id', $id_list)->sum('price');
                 return $total_bill;
@@ -39,14 +40,7 @@ class Student extends Model
     );
     }
 
-    protected function intro() : Attribute
-    {
-        return Attribute::make(
-            get: function($value = null, array $attributes) {
-                return "My name is ". $attributes['name'];
-            }
-        );
-    }
+    // im not sure what this is doing here but keeping it for now
     // protected $attributes = [
     //     'intro' => "hello",
     // ];

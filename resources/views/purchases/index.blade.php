@@ -62,8 +62,7 @@
                 {{ $student->course->name }}
             </td>
             <td>
-                {{-- yellow --}}
-                3,000
+                {{ number_format($student->total_bill); }}
             </td>
             <td>
                 {{ $student->paid }}
