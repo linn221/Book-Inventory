@@ -73,9 +73,9 @@
     *create a method for getting the sum of books's price whose ids are in the argument array*\
     *solved proudly by using an accessor method*
 - [x] display paid columns as checkbox, but keeps yes|no value on details
+- [ ] add javascript to create+edit forms
 - [ ] edit purchase, select chosen books, they are not related to course for the moment
 - [ ] CRUD purchase
-- [ ] add javascript to create+edit forms
 - [ ] repopulating
 - [ ] validation
 - [ ] sort by id, name, paid
@@ -83,6 +83,7 @@
 ### Refactoring
 - [x] course table's name column have to be unique
 - [x] change courses to singular route name
+- [ ] move js function to a separate file, src by using a helper
 
 ### Bugs
 - [x] in course form, one additional tab has 

@@ -397,11 +397,30 @@ protected function firstName(): Attribute
 -----------------------------------------------------------------------------------------------------
 
 ### Learn about a model
+
 ```shell
 php artisan model:show Student
 ```
 
 -----------------------------------------------------------------------------------------------------
+
+### Single action controller
+*dedicate an entire controller for a single action*
+
+
+```shell
+php artisan make:controller TestController --invokable
+```
+
+```php
+Route::post('/server', TestController::class);
+```
+
+*write the action in `__invoke()` method*
+
+-----------------------------------------------------------------------------------------------------
+
+
 -----------------------------------------------------------------------------------------------------
 
 <!-- copy me for templates!
