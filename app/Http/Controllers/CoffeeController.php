@@ -13,14 +13,7 @@ class CoffeeController extends Controller
     public function __invoke(Request $request)
     {
         $books = Book::all();
-        $course_to_books = [];
-        // this one code because i am confused with which collection method to use
-        // refactor.me
-        foreach($books as $book) {
-            $course_to_books[$book->course_id][] = $book->id;
-        }
-        $all_books_id = $books->pluck('id');
-        return view('coffee', compact('course_to_books', 'all_books_id'));
+        return $books;
     }
 
 

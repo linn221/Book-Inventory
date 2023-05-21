@@ -65,7 +65,7 @@
 
                 <div class="row">
                     @forelse ($books as $book)
-                    <div class=" col-6" id="book.{{ $book->id }}">
+                    <div class=" col-6 book-div" id="book-{{ $book->id }}">
                         <input type="checkbox"
                             name="books[]"
                             id="{{ $book->id }}"
@@ -103,14 +103,39 @@
 
 @section('js')
 <script>
-    let course_and_books = {"7":[1,4,8,18],"3":[2,6,14],"2":[3,7],"4":[5,9],"6":[10,11,12,15,17],"1":[13,16,19]};
-    let course_select = document.querySelector("#course");
-    let books_id = document.querySelectorAll('input[type="checkbox"]');
-    console.log(checkboxes);
-    course_select.addEventListener('change', function(event) {
-        let books_id_to_show = course_and_books[event.target.value];
-        alert(books_id_to_show);
-        // make the books visible
+    // okay, this javascript task has overwhelmed my brain. i am considering learning typescript
+
+    // let course_to_books = {"7":[1,4,8,18],"3":[2,6,14],"2":[3,7],"4":[5,9],"6":[10,11,12,15,17],"1":[13,16,19]};
+    // object, each course id named property has an array of related book ids
+    let course_to_books_id = @json($course_to_books);
+
+    let course_select_elm = document.querySelector("#course");
+    let all_books_div = document.querySelectorAll('.book-div');
+    // showing books related to course selected by default
+    show_books(course_to_books_id[course_select_elm.value])
+    
+    // listening for event of user selecting a course
+    course_select_elm.addEventListener('change', function(event) {
+        let selected_course_id = event.target.value;
+        let books_id_to_show = course_to_books_id[selected_course_id];
+        show_books(books_id_to_show);
     });
+    
+    function show_books(books_id) {
+        // show books, takes array of books' id to show
+
+        // hide all books
+        for(book_div of all_books_div) {
+            book_div.style.display = 'None';
+        }
+
+        // show books with the given ids
+        for(book_id of books_id) {
+            let book_div = document.querySelector("#book-" + book_id);
+            book_div.style.display = 'block';
+        }
+    }
+
+    // let books_id = document.querySelectorAll('input[type="checkbox"]');
 </script>
 @endsection

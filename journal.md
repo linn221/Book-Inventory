@@ -99,4 +99,5 @@
 - [ ] make the course clickable link, which filter the list of books by that id
 - [ ] sort the purchase records by total_bill
 - [!] extension for suggestions of eloquent method
+- [!] want to separate javascript code and blade syntax
 - [ ] 

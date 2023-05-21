@@ -30,7 +30,13 @@ class StudentController extends Controller
         //
         $courses = Course::all();
         $books = Book::all();
-        return view("purchases.create", compact('courses', 'books'));
+        $course_to_books = []; // an associated array with each course id as key and its related book ids as values
+        // this wild code because i am confused with which collection method to use
+        // refactor.me
+        foreach($books as $book) {
+            $course_to_books[$book->course_id][] = $book->id;
+        }
+        return view("purchases.create", compact('courses', 'books', 'course_to_books'));
     }
 
     /**
