@@ -40,4 +40,4 @@ Route::resource("student", StudentController::class);
 
 // dev
 // testing route
-Route::get("/coffee", CoffeeController::class);
+Route::get("/coffee", CoffeeController::class)->name('coffee');
