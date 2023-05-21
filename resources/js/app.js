@@ -11,4 +11,3 @@ course_select.addEventListener('change', function(event) {
     alert(books_id_to_show);
     // make the books visible
 });
-    

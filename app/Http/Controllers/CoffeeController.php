@@ -13,7 +13,7 @@ class CoffeeController extends Controller
     public function __invoke(Request $request)
     {
         $books = Book::all();
-        return $books;
+        return $books->toJson();
     }
 
 

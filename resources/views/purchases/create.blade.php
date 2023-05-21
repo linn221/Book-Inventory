@@ -84,8 +84,8 @@
 
         <div class=" mb-3">
             Total Price:
-            <span class=" text-success">
-                3,000
+            <span class=" text-success" id="total_price">
+                0
             </span>
             <input type="checkbox" name="paid" id="paid"
             class=" ms-3 form-check-input">
@@ -107,6 +107,7 @@
 
     // let course_to_books = {"7":[1,4,8,18],"3":[2,6,14],"2":[3,7],"4":[5,9],"6":[10,11,12,15,17],"1":[13,16,19]};
     // object, each course id named property has an array of related book ids
+    let books = @json($books);
     let course_to_books_id = @json($course_to_books);
 
     let course_select_elm = document.querySelector("#course");
@@ -136,6 +137,26 @@
         }
     }
 
-    // let books_id = document.querySelectorAll('input[type="checkbox"]');
+    let book_boxes = document.querySelectorAll('input[name="books[]"]');
+    let total_price_span = document.querySelector('#total_price');
+    total_price_span.textContent = 0;
+    for(book_box of book_boxes) {
+        book_box.addEventListener('change', function(event){
+            let checked = event.target.checked;
+            let book_id = event.target.id;
+            // get the checkbox book's price
+            let selected_price = books.find(function (book) {
+                return book.id == book_id;
+            }).price;
+
+            let origin_total_price = parseInt(total_price_span.textContent);
+            console.log(origin_total_price);
+            if (checked) {
+                total_price_span.textContent = origin_total_price + selected_price;
+            } else {
+                total_price_span.textContent = origin_total_price - selected_price;
+            }
+        })
+    }
 </script>
 @endsection

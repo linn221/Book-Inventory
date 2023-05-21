@@ -73,7 +73,11 @@
     *create a method for getting the sum of books's price whose ids are in the argument array*\
     *solved proudly by using an accessor method*
 - [x] display paid columns as checkbox, but keeps yes|no value on details
-- [ ] add javascript to create+edit forms
+
+### 2023-05-21 Sun
+- [x] add javascript to create form
+- [ ] display total price with commas
+- [ ] implement javascript in edit form
 - [ ] edit purchase, select chosen books, they are not related to course for the moment
 - [ ] CRUD purchase
 - [ ] repopulating
