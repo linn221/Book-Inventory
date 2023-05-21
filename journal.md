@@ -76,6 +76,7 @@
 
 ### 2023-05-21 Sun
 - [x] add javascript to create form
+- [x] zero total price in selecting a different course, uncheck checkboxes as well
 - [ ] display total price with commas
 - [ ] implement javascript in edit form
 - [ ] edit purchase, select chosen books, they are not related to course for the moment

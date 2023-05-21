@@ -121,22 +121,6 @@
         let books_id_to_show = course_to_books_id[selected_course_id];
         show_books(books_id_to_show);
     });
-    
-    function show_books(books_id) {
-        // show books, takes array of books' id to show
-
-        // hide all books
-        for(book_div of all_books_div) {
-            book_div.style.display = 'None';
-        }
-
-        // show books with the given ids
-        for(book_id of books_id) {
-            let book_div = document.querySelector("#book-" + book_id);
-            book_div.style.display = 'block';
-        }
-    }
-
     let book_boxes = document.querySelectorAll('input[name="books[]"]');
     let total_price_span = document.querySelector('#total_price');
     total_price_span.textContent = 0;
@@ -158,5 +142,30 @@
             }
         })
     }
+    
+    function show_books(books_id) {
+        // show books, takes array of books' id to show
+
+        // hide all books
+        for(book_div of all_books_div) {
+            book_div.style.display = 'None';
+        }
+
+        // uncheck all boxes to start from zero
+        let checked_boxes = document.querySelectorAll('input[name="books[]"]:checked');
+        for(let box of checked_boxes) {
+            box.checked = false;
+        }
+        // zero total price
+        let total_price_span = document.querySelector('#total_price');
+        total_price_span.textContent = 0;
+
+        // show books with the given ids
+        for(book_id of books_id) {
+            let book_div = document.querySelector("#book-" + book_id);
+            book_div.style.display = 'block';
+        }
+    }
+
 </script>
 @endsection
