@@ -106,9 +106,9 @@
 
     // let course_to_books = {"7":[1,4,8,18],"3":[2,6,14],"2":[3,7],"4":[5,9],"6":[10,11,12,15,17],"1":[13,16,19]};
     // object, each course id named property has an array of related book ids
-    let books = @json($books);
-    let course_to_books_id = @json($course_to_books);
-
+    window.books = @json($books);
+    window.course_to_books_id = @json($course_to_books);
+{{-- 
     let course_select_elm = document.querySelector("#course");
     let all_books_div = document.querySelectorAll('.book-div');
     // showing books related to course selected by default
@@ -164,6 +164,7 @@
             let book_div = document.querySelector("#book-" + book_id);
             book_div.style.display = 'block';
         }
-    }
+    } --}}
 
 @endpush
+@vite('resources/js/placeBooks.js')
