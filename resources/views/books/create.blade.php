@@ -119,8 +119,6 @@
     </form>
 @endsection
 
-@section('js')
-<script>
+@push('js')
     document.getElementById("{{ old("course_id") }}").checked = true;
-</script>
-@endsection
+endpush

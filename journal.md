@@ -77,18 +77,22 @@
 ### 2023-05-21 Sun
 - [x] add javascript to create form
 - [x] zero total price in selecting a different course, uncheck checkboxes as well
+- [!] write javascript code in a separate file, create functions.js
+- [!] implement javascript in edit form
+- [!] edit purchase, select chosen books, they are not related to course for the moment
+- [!] disable autofocus on student edit form
+- [!] validation for create form
+- [!] finish update student
+- [!] CRUD purchase
 - [ ] display total price with commas
-- [ ] implement javascript in edit form
-- [ ] edit purchase, select chosen books, they are not related to course for the moment
-- [ ] CRUD purchase
 - [ ] repopulating
-- [ ] validation
 - [ ] sort by id, name, paid
 
 ### Refactoring
 - [x] course table's name column have to be unique
 - [x] change courses to singular route name
-- [ ] move js function to a separate file, src by using a helper
+- [ ] use stack instead of js section
+- [!] move js function to a separate file, src by using a helper
 
 ### Bugs
 - [x] in course form, one additional tab has 

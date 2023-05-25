@@ -29,6 +29,8 @@
 
 </body>
 
-@yield("js")
+<script>
+    @stack("js")
+</script>
 
 </html>

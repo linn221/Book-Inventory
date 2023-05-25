@@ -101,8 +101,7 @@
     
 @endsection
 
-@section('js')
-<script>
+@push('js')
     // okay, this javascript task has overwhelmed my brain. i am considering learning typescript
 
     // let course_to_books = {"7":[1,4,8,18],"3":[2,6,14],"2":[3,7],"4":[5,9],"6":[10,11,12,15,17],"1":[13,16,19]};
@@ -167,5 +166,4 @@
         }
     }
 
-</script>
-@endsection
+@endpush
