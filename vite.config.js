@@ -7,7 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/placeBooks.js'
+                'resources/js/add_purchase.js'
             ],
             refresh: true,
         }),

@@ -167,4 +167,4 @@
     } --}}
 
 @endpush
-@vite('resources/js/placeBooks.js')
+@vite('resources/js/add_purchase.js')
