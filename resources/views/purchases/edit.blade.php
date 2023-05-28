@@ -104,5 +104,7 @@
 @endsection
 
 @push('js')
+    window.books = @json($books);
+    window.course_to_books_id = @json($course_to_books);
 @endpush
 @vite('resources/js/edit_purchase.js')

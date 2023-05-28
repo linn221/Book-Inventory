@@ -77,9 +77,14 @@
 ### 2023-05-21 Sun
 - [x] add javascript to create form
 - [x] zero total price in selecting a different course, uncheck checkboxes as well
-- [!] write javascript code in a separate file, create functions.js
-- [!] implement javascript in edit form
-- [!] edit purchase, select chosen books, they are not related to course for the moment
+
+### 2023-05-28 Sun
+- [x] write javascript code in a separate file, create functions.js
+
+- [!] implement javascript in edit form\
+display only related books\
+dynamic total price (including reseting the value at selecting a different course)
+- [!] edit purchase, select chosen books and course on start
 - [!] disable autofocus on student edit form
 - [!] validation for create form
 - [!] finish update student
