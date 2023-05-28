@@ -102,3 +102,7 @@
     </form>
     
 @endsection
+
+@push('js')
+@endpush
+@vite('resources/js/edit_purchase.js')
