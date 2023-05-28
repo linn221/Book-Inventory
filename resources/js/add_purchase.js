@@ -37,24 +37,25 @@ function show_books(books_id) {
         book_div.style.display = 'block';
     }
 }
-// let book_boxes = document.querySelectorAll('input[name="books[]"]');
-// let total_price_span = document.querySelector('#total_price');
-// total_price_span.textContent = 0;
-// for (book_box of book_boxes) {
-//     book_box.addEventListener('change', function (event) {
-//         let checked = event.target.checked;
-//         let book_id = event.target.id;
-//         // get the checkbox book's price
-//         let selected_price = books.find(function (book) {
-//             return book.id == book_id;
-//         }).price;
 
-//         let origin_total_price = parseInt(total_price_span.textContent);
-//         console.log(origin_total_price);
-//         if (checked) {
-//             total_price_span.textContent = origin_total_price + selected_price;
-//         } else {
-//             total_price_span.textContent = origin_total_price - selected_price;
-//         }
-//     })
-// }
+let book_boxes = document.querySelectorAll('input[name="books[]"]');
+let total_price_span = document.querySelector('#total_price');
+total_price_span.textContent = 0;
+for (let book_box of book_boxes) {
+    book_box.addEventListener('change', function (event) {
+        let checked = event.target.checked;
+        let book_id = event.target.id;
+        // get the checkbox book's price
+        let selected_price = books.find(function (book) {
+            return book.id == book_id;
+        }).price;
+
+        let origin_total_price = parseInt(total_price_span.textContent);
+        console.log(origin_total_price);
+        if (checked) {
+            total_price_span.textContent = origin_total_price + selected_price;
+        } else {
+            total_price_span.textContent = origin_total_price - selected_price;
+        }
+    })
+}
