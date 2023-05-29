@@ -81,9 +81,11 @@
 ### 2023-05-28 Sun
 - [x] write javascript code in a separate file, create functions.js
 
-- [!] implement javascript in edit form\
+### 2023-05-29 Mon
+- [x] implement javascript in edit form\
 display only related books\
 dynamic total price (including reseting the value at selecting a different course)
+- [!] inline javascript for selecting the course, chosen books and total bill (make it global)
 - [!] edit purchase, select chosen books and course on start
 - [!] disable autofocus on student edit form
 - [!] validation for create form
@@ -98,6 +100,8 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] change courses to singular route name
 - [ ] use stack instead of js section
 - [!] move js function to a separate file, src by using a helper
+- [ ] total price to total bill to old code, total bill makes more sense
+- [ ] course_to_books should be like a static eloquent method
 
 ### Bugs
 - [x] in course form, one additional tab has 

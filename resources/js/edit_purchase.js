@@ -31,9 +31,10 @@ function MAIN()
     // window.books = @json($books);
     // window.course_to_books_id = @json($course_to_books);
 
+    // showing books related to course selected on start up
     let course_select_elm = document.querySelector("#course");
-    // showing books related to course selected by default
-    show_books(course_to_books_id[course_select_elm.value])
+    course_select_elm.value = window.course;
+    show_books(course_to_books_id[course_select_elm.value]);
 
     // listening for event of user selecting a course
     course_select_elm.addEventListener('change', function (event) {
@@ -42,9 +43,14 @@ function MAIN()
         show_books(books_id_to_show);
     });
 
+    // getting dynamic total price to work
     let book_boxes = document.querySelectorAll('input[name="books[]"]');
     let total_price_span = document.querySelector('#total_price');
-    total_price_span.textContent = 0;
+    total_price_span.textContent = window.total_bill;
+    // selecting already chosen books
+    // for(let book_id of window.selected_books) {
+    //     let book_box_elm = document.getElementById(boo)
+    // }
     for (let book_box of book_boxes) {
         book_box.addEventListener('change', function (event) {
             let checked = event.target.checked;

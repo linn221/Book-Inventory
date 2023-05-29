@@ -106,5 +106,9 @@
 @push('js')
     window.books = @json($books);
     window.course_to_books_id = @json($course_to_books);
+    {{-- echoing for now since i don't need quotes, maybe yellow --}}
+    window.course = @json($student->course->id);
+    window.selected_books = @json($student->books_id);
+    window.total_bill = {{ $student->total_bill }};
 @endpush
 @vite('resources/js/edit_purchase.js')
