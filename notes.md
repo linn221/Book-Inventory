@@ -420,7 +420,13 @@ Route::post('/server', TestController::class);
 
 -----------------------------------------------------------------------------------------------------
  
+ ### Vite: Add a script resource
 
+ - create new script file at resources/js/
+ - add the file to to vite.config.js
+ - finally include the script file on blade files using @vite directive `@vite('resources/js/1.js')`
+
+ *build/compile the resources `npm run build` for production. run 'npm run dev' for developing*
 
 -----------------------------------------------------------------------------------------------------
 
