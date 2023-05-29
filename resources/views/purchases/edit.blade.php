@@ -49,7 +49,7 @@
                 Course
             </label>
 
-            <select name="course" id="" class=" form-select mb-3">
+            <select name="course" id="course" class=" form-select mb-3">
                 @forelse ($courses as $course)
                     <option value="{{ $course->id }}">
                         {{ $course->name }}
@@ -66,7 +66,7 @@
 
                 <div class="row">
                     @forelse ($books as $book)
-                    <div class=" col-6">
+                    <div class=" col-6 book-div" id="book-{{ $book->id }}">
 
                         <input type="checkbox"
                             name="books[]"
@@ -86,7 +86,7 @@
 
         <div class=" mb-3">
             Total Price:
-            <span class=" text-success">
+            <span class=" text-success" id="total_price">
                 3,000
             </span>
             <input type="checkbox" name="paid" id="paid"
