@@ -20,8 +20,7 @@
             type="text"
             name="name"
             value="{{ old('name', $student->name) }}"
-            class=" form-control @error("name") is-invalid @enderror"
-            autofocus>
+            class=" form-control @error("name") is-invalid @enderror">
 
             @error('name')
                 <div class=" invalid-feedback">{{ $message }}</div>
@@ -36,8 +35,7 @@
             type="text"
             name="roll_no"
             value="{{ old('roll_no', $student->roll_no) }}"
-            class=" form-control @error("roll_no") is-invalid @enderror"
-            autofocus>
+            class=" form-control @error("roll_no") is-invalid @enderror">
 
             @error('roll_no')
                 <div class=" invalid-feedback">{{ $message }}</div>

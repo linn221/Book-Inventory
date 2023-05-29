@@ -85,9 +85,9 @@
 - [x] implement javascript in edit form\
 display only related books\
 dynamic total price (including reseting the value at selecting a different course)
-- [!] inline javascript for selecting the course, chosen books and total bill (make it global)
-- [!] edit purchase, select chosen books and course on start
-- [!] disable autofocus on student edit form
+- [x] inline javascript for selecting the course, chosen books and total bill (make it global)
+- [x] edit purchase, select chosen books and course on start
+- [x] disable autofocus on student edit form
 - [!] validation for create form
 - [!] finish update student
 - [!] CRUD purchase
@@ -117,5 +117,5 @@ dynamic total price (including reseting the value at selecting a different cours
 - [ ] make the course clickable link, which filter the list of books by that id
 - [ ] sort the purchase records by total_bill
 - [!] extension for suggestions of eloquent method
-- [!] want to separate javascript code and blade syntax
+- [x] want to separate javascript code and blade syntax
 - [ ] 
