@@ -48,9 +48,10 @@ function MAIN()
     let total_price_span = document.querySelector('#total_price');
     total_price_span.textContent = window.total_bill;
     // selecting already chosen books
-    // for(let book_id of window.selected_books) {
-    //     let book_box_elm = document.getElementById(boo)
-    // }
+    for(let book_id of window.selected_books) {
+        let book_box_elm = document.getElementById(book_id);
+        book_box_elm.checked = true;
+    }
     for (let book_box of book_boxes) {
         book_box.addEventListener('change', function (event) {
             let checked = event.target.checked;
