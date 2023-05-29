@@ -32,13 +32,24 @@ class Student extends Model
         return Attribute::make(
             get: function($value, $attributes) {
                 // yellow, this has been written as a quick fix, i believe i should update it in someways later (maybe relationships, idk)
-                $student = Student::findOrFail($attributes['id']);
-                $id_list = $student->purchases->pluck('book_id');
+                // $student = Student::findOrFail($attributes['id']);
+                $id_list = $this->purchases->pluck('book_id');
                 $total_bill = Book::whereIn('id', $id_list)->sum('price');
                 return $total_bill;
             }
     );
     }
+
+    // protected function booksId() : Attribute
+    // {
+    //     return Attribute::make(
+    //         get: function($value, $attributes) {
+    //             $id_list = $student->purchases->pluck('book_id');
+
+    //         }
+    //     );
+
+    // }
 
     protected function paid() : Attribute
     {
