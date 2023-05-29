@@ -1,17 +1,4 @@
-// global objects
-// window.books = @json($books);
-// window.course_to_books_id = @json($course_to_books);
-
-let course_select_elm = document.querySelector("#course");
-// showing books related to course selected by default
-show_books(course_to_books_id[course_select_elm.value])
-
-// listening for event of user selecting a course
-course_select_elm.addEventListener('change', function (event) {
-    let selected_course_id = event.target.value;
-    let books_id_to_show = course_to_books_id[selected_course_id];
-    show_books(books_id_to_show);
-});
+MAIN();
 
 function show_books(books_id) {
     // show books, takes array of books' id to show
@@ -38,24 +25,42 @@ function show_books(books_id) {
     }
 }
 
-let book_boxes = document.querySelectorAll('input[name="books[]"]');
-let total_price_span = document.querySelector('#total_price');
-total_price_span.textContent = 0;
-for (let book_box of book_boxes) {
-    book_box.addEventListener('change', function (event) {
-        let checked = event.target.checked;
-        let book_id = event.target.id;
-        // get the checkbox book's price
-        let selected_price = books.find(function (book) {
-            return book.id == book_id;
-        }).price;
+function MAIN()
+{
+    // global objects
+    // window.books = @json($books);
+    // window.course_to_books_id = @json($course_to_books);
 
-        let origin_total_price = parseInt(total_price_span.textContent);
-        console.log(origin_total_price);
-        if (checked) {
-            total_price_span.textContent = origin_total_price + selected_price;
-        } else {
-            total_price_span.textContent = origin_total_price - selected_price;
-        }
-    })
+    let course_select_elm = document.querySelector("#course");
+    // showing books related to course selected by default
+    show_books(course_to_books_id[course_select_elm.value])
+
+    // listening for event of user selecting a course
+    course_select_elm.addEventListener('change', function (event) {
+        let selected_course_id = event.target.value;
+        let books_id_to_show = course_to_books_id[selected_course_id];
+        show_books(books_id_to_show);
+    });
+
+    let book_boxes = document.querySelectorAll('input[name="books[]"]');
+    let total_price_span = document.querySelector('#total_price');
+    total_price_span.textContent = 0;
+    for (let book_box of book_boxes) {
+        book_box.addEventListener('change', function (event) {
+            let checked = event.target.checked;
+            let book_id = event.target.id;
+            // get the checkbox book's price
+            let selected_price = books.find(function (book) {
+                return book.id == book_id;
+            }).price;
+
+            let origin_total_price = parseInt(total_price_span.textContent);
+            console.log(origin_total_price);
+            if (checked) {
+                total_price_span.textContent = origin_total_price + selected_price;
+            } else {
+                total_price_span.textContent = origin_total_price - selected_price;
+            }
+        })
+    }
 }
