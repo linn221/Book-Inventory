@@ -108,7 +108,8 @@ dynamic total price (including reseting the value at selecting a different cours
 - [ ] update paid column to bit type, and use casting on model
 
 ## UI
-- [ ] show book price in student.show details page
+- [x] show book price in student.show details page
+- [ ] replace text buttons with icons
 
 ## Bugs
 - [x] in course form, one additional tab has 

@@ -47,8 +47,11 @@
             <td>
                 <ul>
                     @foreach ($student->purchases as $purchase)
-                    <li>
+                    <li class="mb-1">
                         {{ $purchase->book->name }}
+                        <span class=" text-bg-success p-1 rounded-2">
+                            {{ $purchase->book->price }}
+                        </span>
                     </li>
                     @endforeach
                 </ul>
