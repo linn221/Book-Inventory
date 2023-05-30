@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class CoffeeController extends Controller
@@ -12,8 +13,9 @@ class CoffeeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $books = Book::all();
-        return $books->toJson();
+        $books = Book::where('course_id', 7)->get();
+        dd($books);
+        return $books;
     }
 
 

@@ -88,29 +88,36 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] inline javascript for selecting the course, chosen books and total bill (make it global)
 - [x] edit purchase, select chosen books and course on start
 - [x] disable autofocus on student edit form
+
+### 2023-05-30 Tue
+- [x] finish update student
+- [!] add validation rules on update student request
 - [!] validation for create form
-- [!] finish update student
 - [!] CRUD purchase
 - [ ] display total price with commas
 - [ ] repopulating
 - [ ] sort by id, name, paid
 
-### Refactoring
+## Refactoring
 - [x] course table's name column have to be unique
 - [x] change courses to singular route name
-- [ ] use stack instead of js section
+- [x] use stack instead of js section
 - [!] move js function to a separate file, src by using a helper
-- [ ] total price to total bill to old code, total bill makes more sense
+- [!] total price to total bill to old code, total bill makes more sense
 - [ ] course_to_books should be like a static eloquent method
+- [ ] update paid column to bit type, and use casting on model
 
-### Bugs
+## UI
+- [ ] show book price in student.show details page
+
+## Bugs
 - [x] in course form, one additional tab has 
 - [x] course listing table become inline after first item
 - [x] details page, course has been an array instead of just the name
 
 
 
-### Random Thoughts
+## Random Thoughts
 - show ins and outs of stock (+5 or -1 at the stock column)
 - [ ] create course link should persist the existing form data, then redirect back to the create book form, how? this is some serious stuffs, not beginner friendly so im keeping here
 - [ ] warn me when deleting something that will delete related data from a different table

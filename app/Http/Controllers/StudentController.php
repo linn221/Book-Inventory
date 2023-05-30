@@ -97,7 +97,24 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, Student $student)
     {
-        //
+        // update student data
+        $student->name = $request->input('name');
+        $student->roll_no = $request->input('roll_no');
+        $student->paid = $request->has('paid') ? 'yes' : 'no';
+        $student->course_id = $request->input('course');
+        $student->save();
+
+        // record the purchases
+        $chosen_books = $request->input('books');
+        // removing existing records if it is unselected, neat?
+        Purchase::query()->where('student_id', $student->id)->whereNotIn('book_id', $chosen_books)->delete();
+        // adding records for selected items
+        foreach($chosen_books as $book_id) {
+            Purchase::firstOrCreate(['student_id' => $student->id, 'book_id' => $book_id]);
+        }
+        $status = "Updated student#$student->id";
+
+        return redirect()->route('student.index')->with('status', $status);
     }
 
     /**
