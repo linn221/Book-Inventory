@@ -91,9 +91,9 @@ dynamic total price (including reseting the value at selecting a different cours
 
 ### 2023-05-30 Tue
 - [x] finish update student
+- [x] CRUD purchase
 - [!] add validation rules on update student request
 - [!] validation for create form
-- [!] CRUD purchase
 - [ ] display total price with commas
 - [ ] repopulating
 - [ ] sort by id, name, paid
@@ -104,12 +104,15 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] use stack instead of js section
 - [!] move js function to a separate file, src by using a helper
 - [!] total price to total bill to old code, total bill makes more sense
+- [!] refactor old code that treat paid attribute as yes/no string instead of boolean
+- [ ] update students table migration string count
 - [ ] course_to_books should be like a static eloquent method
 - [ ] update paid column to bit type, and use casting on model
 
 ## UI
 - [x] show book price in student.show details page
 - [ ] replace text buttons with icons
+- [ ] transform select element to radio button to save some time
 
 ## Bugs
 - [x] in course form, one additional tab has 

@@ -21,8 +21,12 @@ class UpdateStudentRequest extends FormRequest
      */
     public function rules(): array
     {
+        // basic validation rules not involving database queries
         return [
-            //
+            'name' => 'required|min:4|max:20',
+            'roll_no' => 'required|min:2|max:8',
+            'course' => 'required|numeric',
+            'books' => 'required|array',
         ];
     }
 }
