@@ -92,10 +92,15 @@ dynamic total price (including reseting the value at selecting a different cours
 ### 2023-05-30 Tue
 - [x] finish update student
 - [x] CRUD purchase
+
+### 2023-05-31 Wed
+- [x] validation for create form
 - [!] add validation rules on update student request
-- [!] validation for create form
+- [ ] repopulating old values on create form, course_id, selected books, paid checkbox
+- [ ] show error messages on invalid course_id or books
+- [ ] validation on request's books array
+- [ ] validation on update student, don't allow an existing student name or roll no
 - [ ] display total price with commas
-- [ ] repopulating
 - [ ] sort by id, name, paid
 
 ## Refactoring
@@ -118,6 +123,7 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] in course form, one additional tab has 
 - [x] course listing table become inline after first item
 - [x] details page, course has been an array instead of just the name
+- [!] source code leaks on creating a new book form: => "document.getElementById("").checked = true; endpush "
 
 
 
