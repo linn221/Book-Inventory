@@ -50,7 +50,7 @@
 
             <select name="course" id="course" class=" form-select mb-3">
                 @forelse ($courses as $course)
-                    <option value="{{ $course->id }}">
+                    <option value="{{ $course->id }}" {{ old('course') == $course->id ? 'selected' : '' }}>
                         {{ $course->name }}
                     </option>
                 @empty
