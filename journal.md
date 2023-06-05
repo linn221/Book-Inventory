@@ -95,7 +95,10 @@ dynamic total price (including reseting the value at selecting a different cours
 
 ### 2023-05-31 Wed
 - [x] validation for create form
+
+### 2023-06-05 Mon
 - [!] add validation rules on update student request
+- [!] roll no could be same on updating student
 - [ ] repopulating old values on create form, course_id, selected books, paid checkbox
 - [ ] show error messages on invalid course_id or books
 - [ ] validation on request's books array

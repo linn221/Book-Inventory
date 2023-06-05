@@ -430,6 +430,11 @@ Route::post('/server', TestController::class);
 
 -----------------------------------------------------------------------------------------------------
 
+#### Error: *Argument #1 ($content) must be of type ?string, Illuminate\Database\Eloquent\Relations\HasMany given*
+#### Cause: model **attribute** getting called as a **method**, `$model->attr()`, instead of `$model->attr`
+
+-----------------------------------------------------------------------------------------------------
+
 <!-- copy me for templates!
 <!--
 <details>

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Book;
 use App\Models\Course;
+use App\Models\Purchase;
 use App\Models\Student;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,7 +19,8 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        Student::factory(200)->create();
+        Student::factory(100)->create();
+        Purchase::factory(250)->create();
         //
     }
 }

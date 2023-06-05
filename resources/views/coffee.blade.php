@@ -7,6 +7,8 @@
     <h4>
         Coffee!
     </h4>
+    @php
+    @endphp
 @endsection
 
 @push('js')

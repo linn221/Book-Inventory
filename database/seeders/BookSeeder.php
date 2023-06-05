@@ -13,7 +13,7 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
-        Book::factory(11)->create();
+        Book::factory(15)->create();
         //
         // will input them later, can't mind this for now
         $books = [

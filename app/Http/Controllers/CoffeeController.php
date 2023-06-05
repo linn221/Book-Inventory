@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,17 @@ class CoffeeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $books = Book::where('course_id', 7)->get();
-        dd($books);
-        return $books;
+        // $student_id = rand(1, 200);
+        // $course_id = Student::findOrFail($student_id)->course->id;
+        // // return Course::findOrFail($course_id);
+        // $books = Course::findOrFail($course_id)->books;
+        return Course::all()->random()->id;
+        // return $books;
+        // $course_id = Student::find(1)->course_id;
+        // dd(Course::find($course_id)->books());
+        // $books = Book::where('course_id', 7)->get();
+        // dd($books);
+        // return $books;
     }
 
 
