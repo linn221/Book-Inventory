@@ -23,11 +23,13 @@ class UpdateStudentRequest extends FormRequest
     {
         // basic validation rules not involving database queries
 
+        $id = request()->student->id;
         return [
-            'name' => 'required|min:4|max:20',
-            'roll_no' => 'required|min:2|max:8|unique:students,roll_no',
+            'name' => 'required|min:4|max:40',
+            'roll_no' => "required|min:2|max:8|unique:students,roll_no,$id",
             'course' => 'required|numeric|exists:courses,id',
             'books' => 'required|array',
+            'books.*' => 'numeric|exists:books,id'
         ];
     }
 }

@@ -435,6 +435,11 @@ Route::post('/server', TestController::class);
 
 -----------------------------------------------------------------------------------------------------
 
+#### unique validation rule's except takes id, instead of row data to except
+*"unique:table,column," . request->model->id*
+
+-----------------------------------------------------------------------------------------------------
+
 <!-- copy me for templates!
 <!--
 <details>

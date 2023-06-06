@@ -27,6 +27,7 @@ class StoreStudentRequest extends FormRequest
             'roll_no' => 'required|min:2|max:8|unique:students,roll_no',
             'course' => 'required|numeric|exists:courses,id',
             'books' => 'required|array',
+            'books.*' => 'numeric|exists:books,id'
         ];
     }
 }
