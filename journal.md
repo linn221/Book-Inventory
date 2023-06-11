@@ -101,10 +101,8 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] roll no could be same on updating student
 
 ### 2023-06-11 Sun
-- [!] repopulating old values on create form, course_id, selected books, paid checkbox
-- [ ] show error messages on invalid course_id or books
-- [!] validation on request's books array
-- [ ] validation on update student, don't allow an existing student name or roll no
+- [x] repopulating old values on create form, course_id, selected books, paid checkbox
+- [x] validation on request's books array
 - [ ] display total price with commas
 - [ ] sort by id, name, paid
 
@@ -112,7 +110,7 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] course table's name column have to be unique
 - [x] change courses to singular route name
 - [x] use stack instead of js section
-- [!] move js function to a separate file, src by using a helper
+- [x] move js function to a separate file, src by using a helper
 - [!] total price to total bill to old code, total bill makes more sense
 - [!] refactor old code that treat paid attribute as yes/no string instead of boolean
 - [ ] update students table migration string count
@@ -121,7 +119,7 @@ dynamic total price (including reseting the value at selecting a different cours
 
 ## UI
 - [x] show book price in student.show details page
-- [!] show student records by latest
+- [x] show student records by latest
 - [ ] replace text buttons with icons
 - [ ] transform select element to radio button to save some time
 
@@ -141,4 +139,6 @@ dynamic total price (including reseting the value at selecting a different cours
 - [ ] sort the purchase records by total_bill
 - [!] extension for suggestions of eloquent method
 - [x] want to separate javascript code and blade syntax
+- [?] show error messages on invalid course_id or books
+- [?] validation on update student, don't allow an existing student name or roll no
 - [ ] 
