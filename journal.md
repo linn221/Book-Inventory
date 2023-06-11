@@ -97,8 +97,10 @@ dynamic total price (including reseting the value at selecting a different cours
 - [x] validation for create form
 
 ### 2023-06-05 Mon
-- [!] add validation rules on update student request
-- [!] roll no could be same on updating student
+- [x] add validation rules on update student request
+- [x] roll no could be same on updating student
+
+### 2023-06-11 Sun
 - [!] repopulating old values on create form, course_id, selected books, paid checkbox
 - [ ] show error messages on invalid course_id or books
 - [!] validation on request's books array
@@ -119,6 +121,7 @@ dynamic total price (including reseting the value at selecting a different cours
 
 ## UI
 - [x] show book price in student.show details page
+- [!] show student records by latest
 - [ ] replace text buttons with icons
 - [ ] transform select element to radio button to save some time
 

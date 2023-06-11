@@ -70,7 +70,8 @@
                             name="books[]"
                             id="{{ $book->id }}"
                             value="{{ $book->id }}"
-                            class=" form-check-input">
+                            class=" form-check-input"
+                            {{ in_array($book->id, old('books', [2])) ? 'checked' : '' }}>
                         <label for="{{ $book->id }}" class=" form-check-label">
                             {{ $book->name }} ({{ $book->price }} MMK)
                         </label>
@@ -88,7 +89,8 @@
                 0
             </span>
             <input type="checkbox" name="paid" id="paid"
-            class=" ms-3 form-check-input">
+            class=" ms-3 form-check-input"
+            {{ old('paid', 'off') == 'on' ? 'checked' : '' }}>
             <label for="paid" class=" form-check-label">
                 Paid
             </label>
