@@ -120,7 +120,7 @@ dynamic total price (including reseting the value at selecting a different cours
 ## UI
 - [x] show book price in student.show details page
 - [x] show student records by latest
-- [ ] replace text buttons with icons
+- [!] replace text buttons with icons
 - [ ] transform select element to radio button to save some time
 
 ## Bugs
@@ -138,6 +138,7 @@ dynamic total price (including reseting the value at selecting a different cours
 - [ ] make the course clickable link, which filter the list of books by that id
 - [ ] sort the purchase records by total_bill
 - [!] extension for suggestions of eloquent method
+- [!] create new file html_templates.md for copying commonly used HTML templates
 - [x] want to separate javascript code and blade syntax
 - [?] show error messages on invalid course_id or books
 - [?] validation on update student, don't allow an existing student name or roll no

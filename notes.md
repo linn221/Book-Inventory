@@ -173,6 +173,28 @@ $q->orderBy($order_column, $sort);
 ```
 
 </details>
+<details>
+    <summary>
+        Search bar HTML
+    </summary>
+    ```
+<div class="row justify-content-between mb-3">
+    <div class="col-md-3">
+        <a href="{{ route('student.create') }}" class="btn btn-outline-primary">Create</a>
+    </div>
+    <div class="col-md-5">
+        <form method="get">
+            <div class=" input-group ">
+                <input type="text" class=" form-control" name="q">
+                <button class=" btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    ```
+]
+</details>
 
 -----------------------------------------------------------------------------------------------------
 
