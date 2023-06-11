@@ -17,7 +17,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::latest('id')->get();
-        return view('purchases.index', compact('students'));
+        return view('students.index', compact('students'));
         //
     }
 
@@ -36,7 +36,7 @@ class StudentController extends Controller
         foreach($books as $book) {
             $course_to_books[$book->course_id][] = $book->id;
         }
-        return view("purchases.create", compact('courses', 'books', 'course_to_books'));
+        return view("students.create", compact('courses', 'books', 'course_to_books'));
     }
 
     /**
@@ -54,7 +54,7 @@ class StudentController extends Controller
         $student->paid = $request->has('paid') ? 'yes' : 'no';
         $student->save();
 
-        // record the purchases
+        // record the students
         $books = $request->books;
         foreach($books as $book_id) {
             Purchase::create([
@@ -72,7 +72,7 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         //
-        return view('purchases.show', compact('student'));
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -88,7 +88,7 @@ class StudentController extends Controller
         foreach($books as $book) {
             $course_to_books[$book->course_id][] = $book->id;
         }
-        return view("purchases.edit", compact('student', 'courses', 'books', 'course_to_books'));
+        return view("students.edit", compact('student', 'courses', 'books', 'course_to_books'));
         //
     }
 
@@ -104,7 +104,7 @@ class StudentController extends Controller
         $student->course_id = $request->input('course');
         $student->save();
 
-        // record the purchases
+        // record the students
         $chosen_books = $request->input('books');
         // removing existing records if it is unselected, neat?
         Purchase::query()->where('student_id', $student->id)->whereNotIn('book_id', $chosen_books)->delete();
