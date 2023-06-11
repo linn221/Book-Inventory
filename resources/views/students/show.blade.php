@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-    Purchase Detail
+    Student Detail
 @endsection
 
 @section('content')
-    <h4>Purchase Detail</h4>
+    <h4>Student Detail</h4>
 
     <table class=" table">
         <tr>

@@ -1,12 +1,12 @@
 @extends("layouts.master")
 
 @section('title')
-    Edit purchase
+    Edit Student
 @endsection
 
 @section('content')
     <h4>
-        Edit purchase
+        Edit Student
     </h4>
 
     <form action="{{ route('student.update', $student->id) }}" method="post">
