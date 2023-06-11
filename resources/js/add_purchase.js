@@ -1,6 +1,34 @@
 MAIN();
+function MAIN()
+{
 
-function show_books(books_id) {
+    // global objects
+    // window.books = @json($books);
+    // window.course_to_books_id = @json($course_to_books);
+
+    // showing books related to course selected by default
+    console.log(books);
+    let course_select_elm = document.querySelector("#course");
+    show_books(course_to_books_id[course_select_elm.value], false);
+    update_total_price();
+
+    // listening for event of user selecting a course
+    course_select_elm.addEventListener('change', function (event) {
+        let selected_course_id = event.target.value;
+        let books_id_to_show = course_to_books_id[selected_course_id];
+        show_books(books_id_to_show);
+    });
+
+    // adding listeners for event of selecting a book
+    let book_boxes = document.querySelectorAll('input[name="books[]"]');
+    for (let book_box of book_boxes) {
+        book_box.addEventListener('change', function (event) {
+            update_total_price();
+        })
+    }
+}
+
+function show_books(books_id, clear_state=true) {
     // show books, takes array of books' id to show
 
     let all_books_div = document.querySelectorAll('.book-div');
@@ -10,13 +38,12 @@ function show_books(books_id) {
     }
 
     // uncheck all boxes to start from zero
-    let checked_boxes = document.querySelectorAll('input[name="books[]"]:checked');
-    for (let box of checked_boxes) {
-        box.checked = false;
+    if (clear_state) {
+        let checked_boxes = document.querySelectorAll('input[name="books[]"]:checked');
+        for (let box of checked_boxes) {
+            box.checked = false;
+        }
     }
-    // zero total price
-    let total_price_span = document.querySelector('#total_price');
-    total_price_span.textContent = 0;
 
     // show books with the given ids
     for (let book_id of books_id) {
@@ -25,42 +52,24 @@ function show_books(books_id) {
     }
 }
 
-function MAIN()
+function update_total_price()
 {
+    let total_price = 0;
 
-    // global objects
-    // window.books = @json($books);
-    // window.course_to_books_id = @json($course_to_books);
-
-    let course_select_elm = document.querySelector("#course");
-    // showing books related to course selected by default
-    show_books(course_to_books_id[course_select_elm.value])
-
-    // listening for event of user selecting a course
-    course_select_elm.addEventListener('change', function (event) {
-        let selected_course_id = event.target.value;
-        let books_id_to_show = course_to_books_id[selected_course_id];
-        show_books(books_id_to_show);
-    });
-    let book_boxes = document.querySelectorAll('input[name="books[]"]');
-    let total_price_span = document.querySelector('#total_price');
-    total_price_span.textContent = 0;
-    for (let book_box of book_boxes) {
-        book_box.addEventListener('change', function (event) {
-            let checked = event.target.checked;
-            let book_id = event.target.id;
-            // get the checkbox book's price
-            let selected_price = books.find(function (book) {
-                return book.id == book_id;
-            }).price;
-
-            let origin_total_price = parseInt(total_price_span.textContent);
-            console.log(origin_total_price);
-            if (checked) {
-                total_price_span.textContent = origin_total_price + selected_price;
-            } else {
-                total_price_span.textContent = origin_total_price - selected_price;
-            }
-        })
+    let selected_books = document.querySelectorAll('input[name="books[]"]:checked');
+    for(let selected_book of selected_books) {
+        let selected_book_id = selected_book.value;
+        let selected_book_price = get_book_price(selected_book_id);
+        total_price += selected_book_price;
     }
+    let total_price_span = document.querySelector('#total_price');
+    total_price_span.textContent = total_price;
+}
+
+function get_book_price(book_id)
+{
+    let book_object = books.filter(function(o) {
+        return o.id == book_id;
+    });
+    return book_object[0].price;
 }
