@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 @section("title")
-    Purchase Records
+    Student Records
 @endsection
 
 @section("content")
@@ -13,7 +13,7 @@
 @endif
     
 <h4>
-    Purchase Records
+    Student Records
 </h4>
 <div class="row justify-content-between mb-3">
     <div class="col-md-3">

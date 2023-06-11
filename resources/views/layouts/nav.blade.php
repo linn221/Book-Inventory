@@ -16,11 +16,11 @@
             Category List
         </a>
     </div> --}}
-    <p class="mt-3 my-2">Manage Purchases</p>
+    <p class="mt-3 my-2">Manage Students</p>
 
     <div class=" list-group">
         <a href="{{ route("student.create") }}" class=" list-group-item list-group-item-action">
-            New Purchase
+            New Student
         </a>
         <a href="{{ route("student.index") }}" class=" list-group-item list-group-item-action">
             Records

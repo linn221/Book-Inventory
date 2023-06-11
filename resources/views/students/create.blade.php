@@ -1,12 +1,12 @@
 @extends("layouts.master")
 
 @section('title')
-    Add a new purchase
+    Add Student
 @endsection
 
 @section('content')
     <h4>
-        Add purchase
+        Add Student
     </h4>
 
     <form action="{{ route('student.store') }}" method="post">
